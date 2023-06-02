@@ -1,22 +1,20 @@
-import logo from './logo.svg';
+import Timer from './components/Countdown/Timer';
+import Footer from './components/Footer/Footer';
+import Preloader from './components/Preloader/Preloader';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      <header className="App-wrapper">
+        <h3 className="App-header">Coming Soon!</h3>
+        <p className="App-text">
+          Lorem ipsum dolor sit amet consectetur <br />
+          adipisicing elit sed eiu sit amet consectetur adipisicing
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Timer />
+        <Footer />
+        <Preloader />
       </header>
     </div>
   );

@@ -1,0 +1,11 @@
+footer {
+  position: fixed;
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
