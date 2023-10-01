@@ -1,11 +1,18 @@
-footer {
-  position: fixed;
-  background-color: transparent;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
+.footer {
+  padding: 3em 0;
+  margin-top: 4em;
   text-align: center;
+}
+
+.footer__link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-fg);
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 2em;
+    margin-top: 3em;
+  }
 }

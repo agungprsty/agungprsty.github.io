@@ -1,23 +1,32 @@
-import Timer from './components/Countdown/Timer';
+import { useContext } from 'react';
+import { ThemeContext } from './contexts/theme';
+import Header from './components/Header/Header';
+import About from './components/About/About';
+import Projects from './components/Projects/Projects';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Preloader from './components/Preloader/Preloader';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [{ themeName }] = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <header className="App-wrapper">
-        <h3 className="App-header">Coming Soon!</h3>
-        <p className="App-text">
-          Lorem ipsum dolor sit amet consectetur <br />
-          adipisicing elit sed eiu sit amet consectetur adipisicing
-        </p>
-        <Timer />
-        <Footer />
-        <Preloader />
-      </header>
+    <div id="top" className={`${themeName} app`}>
+      <Header />
+
+      <main>
+        <About />
+        <Projects />
+        <Contact />
+      </main>
+
+      <ScrollToTop />
+      <Footer />
+      <Preloader />
     </div>
   );
-}
+};
 
 export default App;
