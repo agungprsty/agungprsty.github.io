@@ -30,19 +30,20 @@ const projects = [
       'JSONFaker is a service that provides free REST API, with this you can easily do testing and prototyping.',
     stack: ['PHP', 'Lumen', 'json'],
     img: 'https://github.com/agungprsty/fake-api/raw/main/public/assets/img/restapi.png',
-    link: 'https://jsonfaker.000webhostapp.com/'
+    link: 'https://github.com/agungprsty/fake-api/'
   },
   {
     name: 'Template Project ',
     description: 'Build a simple laravel application development environment with docker-compose.',
     stack: ['Docker', 'PHP', 'Laravel', 'MySQL'],
-    img: 'https://github.com/agungprsty/laravel-with-docker/raw/master/docker/images/laravel+docker.png',
+    img: 'https://github.com/agungprsty/laravel-with-docker/raw/master/docker/images/laravel+docker.jpeg',
     link: 'https://github.com/agungprsty/laravel-with-docker'
   }
 ];
 
 const contact = {
-  email: 'agungprsty423@gmail.com'
+  email: 'agungprsty423@gmail.com',
+  telegram: 'a9ungprasetyo'
 };
 
 export { header, about, projects, contact };

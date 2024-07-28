@@ -9,7 +9,10 @@ const Contact = () => {
       <h2 className="section__title">Contact Me</h2>
       <div className="section__contact">
         <h5>
-          Telegram : <span className="link">@a9ungprasetyo</span>
+          Telegram :{' '}
+          <a href={`https://t.me/${contact.telegram}`} className="link">
+            @a9ungprasetyo
+          </a>
         </h5>
         <h5>
           Email :{' '}
