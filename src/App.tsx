@@ -9,6 +9,7 @@ import Preloader from '@/components/Preloader/Preloader';
 import Home from '@/pages/Home';
 import ProjectDetail from '@/pages/ProjectDetail';
 import Projects from '@/components/Projects/Projects';
+import NotFound from '@/pages/NotFound';
 
 const App = () => {
   const { themeName } = useContext(ThemeContext);
@@ -27,8 +28,9 @@ const App = () => {
       <main className="mx-auto w-[95%] max-w-5xl max-[600px]:pb-20">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
 

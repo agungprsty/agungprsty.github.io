@@ -7,7 +7,7 @@ const Navbar = () => {
   const { themeName, toggleTheme } = useContext(ThemeContext);
 
   const navItems = [
-    ...(projects.length ? [{ label: 'Projects', href: '/#projects', icon: Folder }] : []),
+    ...(projects.length ? [{ label: 'Projects', href: '/projects', icon: Folder }] : []),
     { label: 'Notes', href: 'https://medium.com/@agungprsty', icon: Article },
     ...(contact.email ? [{ label: 'Contact', href: '/#contact', icon: Mail }] : [])
   ];

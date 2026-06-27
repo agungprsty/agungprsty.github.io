@@ -5,7 +5,7 @@ import type { Project } from '@/types/portfolio';
 function ProjectContainer({ project }: { project: Project }) {
   return (
     <Link
-      to={`/project/${project.id}`}
+      to={`/projects/${project.id}`}
       className="mx-auto cursor-pointer rounded-2xl bg-bg-alt shadow-theme transition-transform duration-200 hover:-translate-y-1.5 dark:bg-bg-alt-dark dark:shadow-theme-dark">
       <div className="aspect-[16/10] overflow-hidden">
         <CardMedia

@@ -23,7 +23,7 @@ const Projects = ({ limit }: Props) => {
 
       {limit && projects.length > limit && (
         <div className="mt-8 text-center">
-          <Link to="/project" className="btn btn--outline inline-block">
+          <Link to="/projects" className="btn btn--outline inline-block">
             View More
           </Link>
         </div>
