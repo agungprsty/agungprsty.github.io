@@ -8,7 +8,7 @@ const About = () => {
     <div className="flex flex-col max-[600px]:items-start mt-12 max-[600px]:mt-8">
       {name && (
         <h1>
-          Hi, I am <span className="text-primary">{name}.</span>
+          Hi, I am <span className="link">{name}.</span>
         </h1>
       )}
 

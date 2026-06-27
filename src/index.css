@@ -18,7 +18,7 @@
   --shadow-theme: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --shadow-theme-dark: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
-  --font-sans: 'Poppins', sans-serif;
+  --font-sans: 'Inter', sans-serif;
 
   --animate-skrotateplane: skrotateplane 1.2s infinite ease-in-out;
 }
@@ -126,6 +126,24 @@ html {
     color: var(--clr-fg);
     text-transform: lowercase;
     font-weight: 500;
+    padding: 0 0 0.3em 0;
+    position: relative;
+  }
+
+  .link--nav::before {
+    content: '';
+    display: inline;
+    width: 0%;
+    height: 0.2em;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--clr-primary);
+    transition: width 0.2s ease-in;
+  }
+
+  .link--nav:hover::before,
+  .link--nav:focus::before {
+    width: 100%;
   }
 
   .link--icon {

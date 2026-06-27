@@ -14,9 +14,8 @@ const App = () => {
   return (
     <div
       id="top"
-      className={`${themeName === 'dark' ? 'dark' : ''}`}
+      className={`${themeName === 'dark' ? 'dark' : ''} font-sans`}
       style={{
-        fontFamily: "'Poppins', sans-serif",
         lineHeight: 1.5,
         color: 'var(--clr-fg)',
         backgroundColor: 'var(--clr-bg)'
