@@ -1,12 +1,11 @@
-import { header } from '../../portfolio';
-import Navbar from '../Navbar/Navbar';
-import './Header.css';
+import { header } from '@/portfolio';
+import Navbar from '@/components/Navbar/Navbar';
 
 const Header = () => {
   const { homepage, title } = header;
 
   return (
-    <header className="header center">
+    <header className="center mx-auto h-[8em] w-[95%] max-w-5xl justify-between max-[600px]:h-[6em]">
       <h3>
         {homepage ? (
           <a href={homepage} className="link">

@@ -1,12 +1,15 @@
-const header = {
+import type { Header, About, Project, Contact } from '@/types/portfolio';
+
+export const header: Header = {
   homepage: 'https://agungprsty.github.io/',
   title: 'a.py'
 };
 
-const about = {
+export const about: About = {
   name: 'Agung Prasetyo',
-  role: 'Full Stack Engineer',
-  description: 'I love reading books and trying to build whatever comes to mind.',
+  role: 'Software Engineer',
+  description:
+    'Backend Developer with 5+ years of experience engineering production-ready systems using Python, PHP, and Go. Proven track record in designing scalable RESTful APIs, optimizing database performance, and driving integration efficiencies. Experienced in agile environments and passionate about building robust backend architectures and cloud-native solutions.',
   social: {
     facebook: 'https://fb.com/agungprasetyo06',
     twitter: 'https://twitter.com/agprsty02',
@@ -15,7 +18,7 @@ const about = {
   }
 };
 
-const projects = [
+export const projects: Project[] = [
   {
     name: 'Himura Store',
     description:
@@ -41,9 +44,7 @@ const projects = [
   }
 ];
 
-const contact = {
+export const contact: Contact = {
   email: 'agungprsty423@gmail.com',
   telegram: 'a9ungprasetyo'
 };
-
-export { header, about, projects, contact };

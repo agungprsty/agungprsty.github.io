@@ -1,13 +1,12 @@
-import { contact } from '../../portfolio';
-import './Contact.css';
+import { contact } from '@/portfolio';
 
 const Contact = () => {
   if (!contact.email) return null;
 
   return (
-    <section className="section contact center" id="contact">
+    <section className="section flex flex-col items-center text-center" id="contact">
       <h2 className="section__title">Contact Me</h2>
-      <div className="section__contact">
+      <div className="flex flex-col gap-2">
         <h5>
           Telegram :{' '}
           <a href={`https://t.me/${contact.telegram}`} className="link">

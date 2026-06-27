@@ -1,9 +1,16 @@
-import { createContext, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import { createContext, useEffect, useState, type ReactNode } from 'react';
 
-const ThemeContext = createContext();
+interface ThemeContextValue {
+  themeName: string;
+  toggleTheme: () => void;
+}
 
-const ThemeProvider = ({ children }) => {
+const ThemeContext = createContext<ThemeContextValue>({
+  themeName: 'light',
+  toggleTheme: () => {}
+});
+
+function ThemeProvider({ children }: { children: ReactNode }) {
   const [themeName, setThemeName] = useState('light');
 
   useEffect(() => {
@@ -27,12 +34,8 @@ const ThemeProvider = ({ children }) => {
   };
 
   return (
-    <ThemeContext.Provider value={[{ themeName, toggleTheme }]}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ themeName, toggleTheme }}>{children}</ThemeContext.Provider>
   );
-};
-
-ThemeProvider.propTypes = {
-  children: PropTypes.node.isRequired
-};
+}
 
 export { ThemeProvider, ThemeContext };
