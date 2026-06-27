@@ -10,7 +10,7 @@ const Projects = () => {
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {projects.map((project) => (
-          <ProjectContainer key={`${project.name}-${project.link}`} project={project} />
+          <ProjectContainer key={project.id} project={project} />
         ))}
       </div>
     </section>

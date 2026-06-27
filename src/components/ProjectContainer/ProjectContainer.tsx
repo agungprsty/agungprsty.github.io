@@ -1,23 +1,21 @@
+import { Link } from 'react-router-dom';
 import CardMedia from '@mui/material/CardMedia';
 import type { Project } from '@/types/portfolio';
 
 function ProjectContainer({ project }: { project: Project }) {
   return (
-    <a
-      href={project.link}
-      aria-label="live preview"
-      target="_blank"
-      className="link mx-auto cursor-pointer shadow-theme transition-transform duration-200 hover:-translate-y-1.5 dark:shadow-theme-dark"
-      rel="noreferrer">
-      <CardMedia
-        component="img"
-        height="180"
-        image={project.img}
-        alt={project.name}
-        className="rounded-t-2xl"
-      />
+    <Link
+      to={`/project/${project.id}`}
+      className="mx-auto cursor-pointer rounded-2xl bg-bg-alt shadow-theme transition-transform duration-200 hover:-translate-y-1.5 dark:bg-bg-alt-dark dark:shadow-theme-dark">
+      <div className="aspect-[16/10] overflow-hidden">
+        <CardMedia
+          component="img"
+          image={project.img}
+          alt={project.name}
+          className="h-full w-full rounded-t-2xl object-cover"
+        />
+      </div>
       <h3 className="mt-2.5 text-center">{project.name}</h3>
-      <p className="mt-2 px-2.5 text-fg-alt dark:text-fg-alt-dark">{project.description}</p>
       {project.stack && (
         <ul className="my-2 flex flex-wrap justify-center">
           {project.stack.map((item) => (
@@ -29,7 +27,7 @@ function ProjectContainer({ project }: { project: Project }) {
           ))}
         </ul>
       )}
-    </a>
+    </Link>
   );
 }
 

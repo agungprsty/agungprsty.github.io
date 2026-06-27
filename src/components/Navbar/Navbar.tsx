@@ -12,26 +12,30 @@ const Navbar = () => {
   return (
     <nav className="flex items-center">
       <ul
-        className={`mr-6 flex max-[600px]:fixed max-[600px]:inset-0 max-[600px]:z-10 max-[600px]:w-full max-[600px]:flex-col max-[600px]:items-center max-[600px]:justify-center ${
+        className={`mr-6 flex max-[600px]:fixed max-[600px]:inset-0 max-[600px]:z-10 max-[600px]:w-full max-[600px]:flex-col max-[600px]:items-center max-[600px]:justify-center max-[600px]:gap-6 max-[600px]:bg-bg max-[600px]:dark:bg-bg-dark ${
           showNavList ? 'max-[600px]:flex' : 'max-[600px]:hidden'
-        }`}>
+        }`}
+        onClick={toggleNavList}>
         {projects.length ? (
-          <li className="ml-6 max-[600px]:my-2">
-            <a href="#projects" onClick={toggleNavList} className="link--nav">
+          <li className="ml-6 max-[600px]:ml-0">
+            <a href="/#projects" onClick={toggleNavList} className="link--nav max-[600px]:text-lg">
               Projects
             </a>
           </li>
         ) : null}
 
-        <li className="ml-6 max-[600px]:my-2">
-          <a href="https://medium.com/@agungprsty" onClick={toggleNavList} className="link--nav">
+        <li className="ml-6 max-[600px]:ml-0">
+          <a
+            href="https://medium.com/@agungprsty"
+            onClick={toggleNavList}
+            className="link--nav max-[600px]:text-lg">
             Notes
           </a>
         </li>
 
         {contact.email ? (
-          <li className="ml-6 max-[600px]:my-2">
-            <a href="#contact" onClick={toggleNavList} className="link--nav">
+          <li className="ml-6 max-[600px]:ml-0">
+            <a href="/#contact" onClick={toggleNavList} className="link--nav max-[600px]:text-lg">
               Contact
             </a>
           </li>

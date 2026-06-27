@@ -9,7 +9,8 @@
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.18.0"
   },
   "scripts": {
     "predeploy": "npm run build",

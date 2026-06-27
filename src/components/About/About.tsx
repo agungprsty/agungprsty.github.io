@@ -13,7 +13,7 @@ const About = () => {
       )}
 
       {role && <h2 className="mt-5">A {role}.</h2>}
-      <p className="mt-10 max-w-[600px] text-[1.1rem]">{description}</p>
+      <p className="mt-10 text-[1.1rem]">{description}</p>
 
       <div className="mt-10 flex items-center max-[600px]:justify-center">
         {social && (
