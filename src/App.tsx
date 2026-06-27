@@ -24,7 +24,7 @@ const App = () => {
       }}>
       <Header />
 
-      <main className="mx-auto w-[95%] max-w-5xl">
+      <main className="mx-auto w-[95%] max-w-5xl max-[600px]:pb-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<Projects />} />

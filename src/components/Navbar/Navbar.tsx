@@ -1,63 +1,79 @@
-import { useContext, useState } from 'react';
-import { Brightness2, WbSunnyRounded, Menu, Close } from '@mui/icons-material';
+import { useContext } from 'react';
+import { Brightness2, WbSunnyRounded, Home, Folder, Article, Mail } from '@mui/icons-material';
 import { ThemeContext } from '@/contexts/theme';
 import { projects, contact } from '@/portfolio';
 
 const Navbar = () => {
   const { themeName, toggleTheme } = useContext(ThemeContext);
-  const [showNavList, setShowNavList] = useState(false);
 
-  const toggleNavList = () => setShowNavList(!showNavList);
+  const navItems = [
+    ...(projects.length ? [{ label: 'Projects', href: '/#projects', icon: Folder }] : []),
+    { label: 'Notes', href: 'https://medium.com/@agungprsty', icon: Article },
+    ...(contact.email ? [{ label: 'Contact', href: '/#contact', icon: Mail }] : [])
+  ];
 
   return (
-    <nav className="flex items-center">
-      <ul
-        className={`mr-6 flex max-[600px]:fixed max-[600px]:inset-0 max-[600px]:z-10 max-[600px]:w-full max-[600px]:flex-col max-[600px]:items-center max-[600px]:justify-center max-[600px]:gap-6 max-[600px]:bg-bg max-[600px]:dark:bg-bg-dark ${
-          showNavList ? 'max-[600px]:flex' : 'max-[600px]:hidden'
-        }`}
-        onClick={toggleNavList}>
-        {projects.length ? (
-          <li className="ml-6 max-[600px]:ml-0">
-            <a href="/#projects" onClick={toggleNavList} className="link--nav max-[600px]:text-lg">
-              Projects
+    <>
+      {/* Desktop nav */}
+      <nav className="flex items-center max-[600px]:hidden">
+        <ul className="mr-6 flex">
+          {navItems.map((item) => (
+            <li key={item.label} className="ml-6">
+              <a href={item.href} className="link--nav">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          type="button"
+          onClick={toggleTheme}
+          className="btn--icon mt-1.5"
+          aria-label="toggle theme">
+          {themeName === 'dark' ? <WbSunnyRounded /> : <Brightness2 />}
+        </button>
+      </nav>
+
+      {/* Mobile bottom nav */}
+      <nav className="fixed inset-x-0 bottom-0 z-20 hidden border-t border-fg/10 bg-bg px-2 pb-2 pt-1 dark:border-fg-dark/10 dark:bg-bg-dark max-[600px]:block">
+        <ul className="flex items-center justify-around">
+          <li>
+            <a href="/" className="flex flex-col items-center gap-0.5 text-fg dark:text-fg-dark">
+              <Home fontSize="small" />
+              <span className="text-[0.6rem]">Home</span>
             </a>
           </li>
-        ) : null}
-
-        <li className="ml-6 max-[600px]:ml-0">
-          <a
-            href="https://medium.com/@agungprsty"
-            onClick={toggleNavList}
-            className="link--nav max-[600px]:text-lg">
-            Notes
-          </a>
-        </li>
-
-        {contact.email ? (
-          <li className="ml-6 max-[600px]:ml-0">
-            <a href="/#contact" onClick={toggleNavList} className="link--nav max-[600px]:text-lg">
-              Contact
-            </a>
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="flex flex-col items-center gap-0.5 text-fg dark:text-fg-dark">
+                  <Icon fontSize="small" />
+                  <span className="text-[0.6rem]">{item.label}</span>
+                </a>
+              </li>
+            );
+          })}
+          <li>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="flex flex-col items-center gap-0.5 text-fg dark:text-fg-dark"
+              aria-label="toggle theme">
+              {themeName === 'dark' ? (
+                <WbSunnyRounded fontSize="small" />
+              ) : (
+                <Brightness2 fontSize="small" />
+              )}
+              <span className="text-[0.6rem]">{themeName === 'dark' ? 'Light' : 'Dark'}</span>
+            </button>
           </li>
-        ) : null}
-      </ul>
-
-      <button
-        type="button"
-        onClick={toggleTheme}
-        className="btn--icon mt-1.5"
-        aria-label="toggle theme">
-        {themeName === 'dark' ? <WbSunnyRounded /> : <Brightness2 />}
-      </button>
-
-      <button
-        type="button"
-        onClick={toggleNavList}
-        className="btn--icon ml-3 hidden max-[600px]:flex max-[600px]:z-10"
-        aria-label="toggle navigation">
-        {showNavList ? <Close /> : <Menu />}
-      </button>
-    </nav>
+        </ul>
+      </nav>
+    </>
   );
 };
 

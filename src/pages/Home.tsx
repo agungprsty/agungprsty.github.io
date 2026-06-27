@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <About />
-      <Projects />
+      <Projects limit={3} />
       <Contact />
     </>
   );
