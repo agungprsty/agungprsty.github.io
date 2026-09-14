@@ -1,22 +1,40 @@
 import { useContext } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Brightness2, WbSunnyRounded, Home, Folder, Article, Mail } from '@mui/icons-material';
+import { Link, useLocation } from 'react-router-dom';
+import {
+  Brightness2,
+  WbSunnyRounded,
+  Home,
+  Folder,
+  Article,
+  Mail,
+  Work
+} from '@mui/icons-material';
 import { ThemeContext } from '@/contexts/theme';
-import { projects, contact } from '@/portfolio';
+import { projects, experience, contact } from '@/portfolio';
 
 const Navbar = () => {
   const { themeName, toggleTheme } = useContext(ThemeContext);
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
+    if (href === '/') return pathname === '/' && !hash;
+
+    if (href.includes('#')) {
+      const [path, anchor] = href.split('#');
+      return pathname === (path || '/') && hash === `#${anchor}`;
+    }
+
     if (href.startsWith('/')) return pathname.startsWith(href);
+
     return false;
   };
 
   const navItems = [
     ...(projects.length ? [{ label: 'Projects', href: '/projects', icon: Folder }] : []),
-    { label: 'Notes', href: 'https://medium.com/@agungprsty', icon: Article },
+    ...(experience.length
+      ? [{ label: 'Experience', href: '/experience', icon: Work, shortLabel: 'Exp' }]
+      : []),
+    { label: 'Notes', href: 'https://medium.com/@agungprsty', icon: Article, external: true },
     ...(contact.email ? [{ label: 'Contact', href: '/#contact', icon: Mail }] : [])
   ];
 
@@ -30,9 +48,18 @@ const Navbar = () => {
       {/* Desktop nav */}
       <nav className="flex items-center max-[600px]:hidden">
         <ul className="mr-6 flex">
+          <li className="ml-6">
+            <Link to="/" className={`link--nav ${isActive('/') ? 'link--nav--active' : ''}`}>
+              Home
+            </Link>
+          </li>
           {navItems.map((item) => (
             <li key={item.label} className="ml-6">
-              <a href={item.href} className="link--nav">
+              <a
+                href={item.href}
+                className={`link--nav ${isActive(item.href) ? 'link--nav--active' : ''}`}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noreferrer' : undefined}>
                 {item.label}
               </a>
             </li>
@@ -65,12 +92,16 @@ const Navbar = () => {
             const active = isActive(item.href);
             return (
               <li key={item.label}>
-                <a href={item.href} className={linkClass(item.href)}>
+                <a
+                  href={item.href}
+                  className={linkClass(item.href)}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noreferrer' : undefined}>
                   {active && (
                     <span className="absolute -top-1 h-0.5 w-5 rounded-full bg-primary dark:bg-primary-dark" />
                   )}
                   <Icon fontSize="small" />
-                  <span className="text-[0.6rem]">{item.label}</span>
+                  <span className="text-[0.6rem]">{item.shortLabel ?? item.label}</span>
                 </a>
               </li>
             );

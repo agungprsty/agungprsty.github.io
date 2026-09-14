@@ -146,6 +146,14 @@ html {
     width: 100%;
   }
 
+  .link--nav--active {
+    color: var(--clr-primary);
+  }
+
+  .link--nav--active::before {
+    width: 100%;
+  }
+
   .link--icon {
     color: var(--clr-fg);
   }
