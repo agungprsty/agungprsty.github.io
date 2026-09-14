@@ -1,4 +1,4 @@
-import type { Header, About, Experience, Project, Contact } from '@/types/portfolio';
+import type { Header, About, Experience, SkillCategory, Project, Contact } from '@/types/portfolio';
 import type { Header, About, Project, Experience, SkillCategory, Contact } from '@/types/portfolio';
 
 export const header: Header = {
@@ -151,6 +151,48 @@ export const experience: Experience[] = [
     points: [
       'Maintained the cleanliness and tidiness of office facilities, supporting daily operations of 30+ employees',
       'Supported company events and activities, contributing to employee engagement'
+    ]
+  }
+];
+
+export const skills: SkillCategory[] = [
+  {
+    category: 'Backend',
+    items: [
+      { name: 'Python (FastAPI)', level: 'advanced' },
+      { name: 'PHP (Laravel, CI)', level: 'advanced' },
+      { name: 'REST API Design', level: 'advanced' },
+      { name: 'Typescript', level: 'advanced' },
+      { name: 'Go', level: 'intermediate' },
+      { name: 'Rust', level: 'beginner' }
+    ]
+  },
+  {
+    category: 'Database & Cache',
+    items: [
+      { name: 'MySQL', level: 'advanced' },
+      { name: 'PostgreSQL', level: 'advanced' },
+      { name: 'MongoDB', level: 'advanced' },
+      { name: 'Redis', level: 'advanced' },
+      { name: 'Firebase', level: 'intermediate' }
+    ]
+  },
+  {
+    category: 'DevOps & Tools',
+    items: [
+      { name: 'Docker', level: 'advanced' },
+      { name: 'Git & GitHub', level: 'advanced' },
+      { name: 'Nginx', level: 'intermediate' },
+      { name: 'Linux', level: 'intermediate' }
+    ]
+  },
+  {
+    category: 'Frontend & Others',
+    items: [
+      { name: 'React/Next.js', level: 'advanced' },
+      { name: 'Vue/Nuxt.js', level: 'advanced' },
+      { name: 'TailwindCSS', level: 'advanced' },
+      { name: 'OAuth2 & Message Queue', level: 'advanced' }
     ]
   }
 ];
