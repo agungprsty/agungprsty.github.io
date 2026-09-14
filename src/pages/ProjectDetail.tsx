@@ -32,6 +32,7 @@ const ProjectDetail = () => {
         height="360"
         image={project.img}
         alt={project.name}
+        decoding="async"
         className="mb-8 rounded-2xl object-cover shadow-theme dark:shadow-theme-dark"
       />
 

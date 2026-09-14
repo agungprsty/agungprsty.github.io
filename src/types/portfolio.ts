@@ -54,8 +54,6 @@ export interface SkillCategory {
   items: Skill[];
 }
 
-
-
 export interface PortfolioData {
   header: Header;
   about: About;
@@ -65,4 +63,3 @@ export interface PortfolioData {
   contact: Contact;
   resume: string;
 }
-

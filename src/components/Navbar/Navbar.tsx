@@ -111,7 +111,7 @@ const Navbar = () => {
               type="button"
               onClick={toggleTheme}
               className="flex flex-col items-center gap-0.5 text-fg dark:text-fg-dark"
-              aria-label="toggle theme">
+              aria-label={themeName === 'dark' ? 'Light' : 'Dark'}>
               {themeName === 'dark' ? (
                 <WbSunnyRounded fontSize="small" />
               ) : (

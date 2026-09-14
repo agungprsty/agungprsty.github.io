@@ -12,6 +12,8 @@ function ProjectContainer({ project }: { project: Project }) {
           component="img"
           image={project.img}
           alt={project.name}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full rounded-t-2xl object-cover"
         />
       </div>
