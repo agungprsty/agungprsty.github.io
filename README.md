@@ -2,49 +2,118 @@
 
 Check 👉 [PORTOFOLIO](https://agungprsty.github.io/)
 
+## Stack
+
+- Vite
+- React 18
+- TypeScript
+- TailwindCSS v4
+- React Router v7
+
 ## Requirement
 
-This application is being developed in following requirement :
-
-- node v18.15.0
-- react v18.2.0
+- node (recommended >= 18)
+- npm
 
 ## Installation
 
-- clone project
-- npm install
-- npm run start
-- npm run deploy (deploy changes to github pages)
+```bash
+npm install
+npm run dev
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
+### `npm run dev`
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode with Vite dev server (default port 5173).
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder, runs `tsc` for type
+checking, and copies `index.html` to `404.html` so GitHub Pages SPA routing
+(e.g. `/projects`) works on a hard refresh.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run preview`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Serves the production build locally for preview.
+
+### `npm run lint`
+
+Runs ESLint across the project.
+
+### `npm run lint:fix`
+
+Runs ESLint and auto-fixes issues.
+
+### `npm run format`
+
+Formats the codebase with Prettier.
 
 ### `npm run deploy`
 
-Launches the application in the production mode and deploy to github pages.
+Builds the app (`predeploy`) then publishes the `build` folder to the
+`gh-pages` branch via the `gh-pages` package. GitHub Pages is configured to
+serve from that branch.
 
-> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- `public/agung-prasetyo-cv.pdf` — resume/CV yang diunduh lewat tombol "Download CV".
+
+## Deployment to GitHub Pages
+
+The site is hosted at `https://agungprsty.github.io/` and served from the
+`gh-pages` branch. To deploy the latest version:
+
+```bash
+npm run deploy
+```
+
+The `gh-pages` branch is gitignored from the source tree and only exists as
+the deployment output, so it can be safely overwritten on every deploy.
+
+## Project Structure
+
+```
+src/
+├── components/       # Header, Navbar, Footer, ProjectContainer, etc.
+│   ├── About/
+│   ├── Contact/
+│   ├── Footer/
+│   ├── Header/
+│   ├── Navbar/
+│   ├── Preloader/
+│   ├── ProjectContainer/
+│   ├── Projects/
+│   ├── ScrollToTop/
+│   └── Skills/
+├── contexts/         # Theme (dark mode) context
+├── pages/            # Home, Experience, ProjectDetail, NotFound
+├── types/            # Portfolio type definitions
+├── App.tsx           # Routes & layout
+├── index.css         # Tailwind entry + global styles
+├── main.tsx          # App entry point
+└── portfolio.ts      # Personal data & project content (single source of truth)
+```
+
+## Adding a Project
+
+Add an entry to `src/portfolio.ts` following the `Project` interface defined
+in `src/types/portfolio.ts`. The list page, detail page, and homepage render
+dynamically from this data.
+
+## Adding Experience
+
+Add an entry to the `experience` array in `src/portfolio.ts` following the
+`Experience` interface. The `/experience` page renders a timeline from this
+data.
+
+## Adding / Updating Skills
+
+Skills are grouped by category in the `skills` array in `src/portfolio.ts`.
+Each skill uses a `level` of `beginner`, `intermediate`, or `advanced`, shown
+as a colored level pill in the Skills section on the homepage.
+
+## Updating the CV
+
+Replace `public/agung-prasetyo-cv.pdf` with your latest resume. The "Download
+CV" button in the hero section links to it via the `resume` constant in
+`src/portfolio.ts`.
