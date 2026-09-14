@@ -24,6 +24,8 @@ export interface Project {
   stack: string[];
   img: string;
   link: string;
+  createdAt?: string;
+  pin?: boolean;
 }
 
 export interface Contact {
