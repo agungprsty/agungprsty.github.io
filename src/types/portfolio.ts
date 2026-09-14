@@ -33,6 +33,17 @@ export interface Contact {
   telegram: string;
 }
 
+export interface Experience {
+  id: string;
+  company: string;
+  location: string;
+  role: string;
+  period: string;
+  points: string[];
+}
+
+
+
 export interface PortfolioData {
   header: Header;
   about: About;

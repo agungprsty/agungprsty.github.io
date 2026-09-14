@@ -1,4 +1,5 @@
-import type { Header, About, Project, Contact } from '@/types/portfolio';
+import type { Header, About, Experience, Project, Contact } from '@/types/portfolio';
+import type { Header, About, Project, Experience, SkillCategory, Contact } from '@/types/portfolio';
 
 export const header: Header = {
   homepage: 'https://agungprsty.github.io/',
@@ -95,6 +96,64 @@ export const projects: Project[] = [
   if (pinDiff !== 0) return pinDiff;
   return (b.createdAt ?? '').localeCompare(a.createdAt ?? '');
 });
+
+export const experience: Experience[] = [
+  {
+    id: 'dsi-backend',
+    company: 'PT Digital Sekuriti Indonesia',
+    location: 'Yogyakarta',
+    role: 'Backend Developer',
+    period: 'Jan 2024 - Sekarang',
+    points: [
+      'Developed and maintained RESTful APIs serving thousands of daily users with high availability and stable performance',
+      'Integrated 10+ third-party APIs, reducing manual processing time by up to 40%',
+      'Designed and optimized backend services, improving data exchange efficiency by 30%',
+      'Optimized complex PostgreSQL/MySQL queries and implemented Redis caching, reducing average API response time by 35%',
+      'Architected and deployed scalable microservices using Python (FastAPI) and Node.js, containerized via Docker to ensure environment consistency',
+      'Streamlined frontend–backend integration, decreasing API error rates by 25%',
+      'Implemented automated unit testing, achieving 80%+ code coverage',
+      'Identified and resolved critical performance bottlenecks and security vulnerabilities in production environments, reducing system downtime and ensuring data integrity',
+      'Spearheaded the refactoring of a monolithic legacy codebase into clean, modular structures, improving maintainability and reducing technical debt for future feature deployments'
+    ]
+  },
+  {
+    id: 'dsi-junior-dev',
+    company: 'PT Digital Sekuriti Indonesia',
+    location: 'Yogyakarta',
+    role: 'Junior Web Developer',
+    period: 'Jun 2021 - Dec 2023',
+    points: [
+      'Developed 5+ responsive web applications that improved mobile user engagement by 20% and ensured cross-device accessibility',
+      'Improved website loading speed by up to 30% through advanced asset optimization, minification, and implementing efficient browser caching strategies',
+      'Enhanced user interaction and front-end responsiveness by developing dynamic interactive components utilizing JavaScript and jQuery',
+      'Converted UI/UX designs from Figma into functional web applications using AJAX and JSON',
+      'Collaborated with a cross-functional team of 6+ engineers and designers using Git-based workflows, reducing code conflict resolutions by 15%'
+    ]
+  },
+  {
+    id: 'forta-warehouse-lead',
+    company: 'PT Forta Digital Teknologi',
+    location: 'Jakarta',
+    role: 'Warehouse Lead',
+    period: 'Sep 2020 - May 2021',
+    points: [
+      'Led daily operations for a team of 10+ staff members, strengthening communication and improving overall team productivity by 15%',
+      'Improved inventory accuracy by 20% through systematic audits and documentation',
+      'Trained employees on safety standards, reducing workplace incidents'
+    ]
+  },
+  {
+    id: 'forta-office-boy',
+    company: 'PT Forta Digital Teknologi',
+    location: 'Jakarta',
+    role: 'Office Boy',
+    period: 'Oct 2019 - Aug 2020',
+    points: [
+      'Maintained the cleanliness and tidiness of office facilities, supporting daily operations of 30+ employees',
+      'Supported company events and activities, contributing to employee engagement'
+    ]
+  }
+];
 
 export const contact: Contact = {
   email: 'agungprsty423@gmail.com',
