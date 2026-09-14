@@ -202,3 +202,4 @@ export const contact: Contact = {
   telegram: 'a9ungprasetyo'
 };
 
+export const resume = '/agung-prasetyo-cv.pdf';

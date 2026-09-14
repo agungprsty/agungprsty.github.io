@@ -1,5 +1,5 @@
-import { GitHub, LinkedIn, Facebook, Twitter } from '@mui/icons-material';
-import { about } from '@/portfolio';
+import { GitHub, LinkedIn, Facebook, Twitter, Download } from '@mui/icons-material';
+import { about, resume } from '@/portfolio';
 
 const About = () => {
   const { name, role, description, social } = about;
@@ -15,7 +15,13 @@ const About = () => {
       {role && <h2 className="mt-5">A {role}.</h2>}
       <p className="mt-10 text-[1.1rem]">{description}</p>
 
-      <div className="mt-10 flex items-center max-[600px]:justify-center">
+      <div className="mt-10 flex flex-wrap items-center gap-4 max-[600px]:justify-center">
+        {resume && (
+          <a href={resume} download className="btn btn--outline inline-flex items-center gap-2">
+            <Download /> Download CV
+          </a>
+        )}
+
         {social && (
           <>
             {social.github && (

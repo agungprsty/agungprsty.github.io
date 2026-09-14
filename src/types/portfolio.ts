@@ -60,5 +60,9 @@ export interface PortfolioData {
   header: Header;
   about: About;
   projects: Project[];
+  experience: Experience[];
+  skills: SkillCategory[];
   contact: Contact;
+  resume: string;
 }
+
