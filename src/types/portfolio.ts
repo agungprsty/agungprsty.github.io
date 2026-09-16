@@ -1,8 +1,8 @@
 export interface Social {
   github?: string;
   linkedin?: string;
-  facebook?: string;
-  twitter?: string;
+  x?: string;
+  medium?: string;
 }
 
 export interface About {
@@ -25,6 +25,8 @@ export interface Project {
   img: string;
   link: string;
   createdAt?: string;
+  period?: string;
+  type?: string;
   pin?: boolean;
 }
 
@@ -39,6 +41,7 @@ export interface Experience {
   location: string;
   role: string;
   period: string;
+  description?: string;
   points: string[];
 }
 

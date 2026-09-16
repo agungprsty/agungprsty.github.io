@@ -19,20 +19,20 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-bg: #fcfcfc;
-  --color-bg-alt: #fff;
-  --color-fg: #555;
-  --color-fg-alt: #444;
-  --color-primary: #2978b5;
+  --color-bg: #fafafa;
+  --color-bg-alt: #ffffff;
+  --color-fg: #525252;
+  --color-fg-alt: #171717;
+  --color-primary: #0284c7;
 
-  --color-bg-dark: #23283e;
-  --color-bg-alt-dark: #2a2f4c;
-  --color-fg-dark: #bdbddd;
-  --color-fg-alt-dark: #cdcdff;
-  --color-primary-dark: #90a0d9;
+  --color-bg-dark: #0a0a0a;
+  --color-bg-alt-dark: #171717;
+  --color-fg-dark: #a3a3a3;
+  --color-fg-alt-dark: #f5f5f5;
+  --color-primary-dark: #38bdf8;
 
   --shadow-theme: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --shadow-theme-dark: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --shadow-theme-dark: rgba(0, 0, 0, 0.3) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
   --font-sans: 'Inter', sans-serif;
 
@@ -43,30 +43,32 @@
   0% {
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
   }
+
   50% {
     transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
   }
+
   100% {
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
 
 :root {
-  --clr-bg: #fcfcfc;
-  --clr-bg-alt: #fff;
-  --clr-fg: #555;
-  --clr-fg-alt: #444;
-  --clr-primary: #2978b5;
+  --clr-bg: #fafafa;
+  --clr-bg-alt: #ffffff;
+  --clr-fg: #525252;
+  --clr-fg-alt: #171717;
+  --clr-primary: #0284c7;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .dark {
-  --clr-bg: #23283e;
-  --clr-bg-alt: #2a2f4c;
-  --clr-fg: #bdbddd;
-  --clr-fg-alt: #cdcdff;
-  --clr-primary: #90a0d9;
-  --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --clr-bg: #0a0a0a;
+  --clr-bg-alt: #171717;
+  --clr-fg: #a3a3a3;
+  --clr-fg-alt: #f5f5f5;
+  --clr-primary: #38bdf8;
+  --shadow: rgba(0, 0, 0, 0.3) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 html {
@@ -74,6 +76,7 @@ html {
 }
 
 @layer base {
+
   h1,
   h2,
   h3,
@@ -247,9 +250,10 @@ html {
   }
 
   .section__title {
-    text-align: center;
+    text-align: left;
     margin-bottom: 1em;
     text-transform: uppercase;
+    font-weight: 500;
   }
 
   .center {

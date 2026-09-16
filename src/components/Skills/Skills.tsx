@@ -1,44 +1,28 @@
 import { skills } from '@/portfolio';
 import type { SkillLevel } from '@/types/portfolio';
 
-const LEVEL_STYLES: Record<SkillLevel, string> = {
-  beginner: 'bg-fg/10 text-fg-alt dark:bg-fg-dark/10 dark:text-fg-alt-dark',
-  intermediate: 'bg-primary/10 text-[#17608f] dark:bg-primary-dark/10 dark:text-[#a6b3e0]',
-  advanced: 'bg-primary text-white dark:bg-primary-dark dark:text-bg-dark'
-};
-
 const Skills = () => {
   if (!skills.length) return null;
 
   return (
-    <section id="skills" className="section">
-      <h2 className="section__title">Skills</h2>
+    <section id="skills" className="section mt-12">
+      <h4 className="section__title uppercase mb-5">Skills</h4>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="flex flex-col gap-2">
         {skills.map((group) => (
-          <div
-            key={group.category}
-            className="rounded-2xl bg-bg-alt p-5 shadow-theme dark:bg-bg-alt-dark dark:shadow-theme-dark">
-            <h3 className="mb-4 text-center text-sm font-semibold uppercase tracking-wide text-primary dark:text-primary-dark">
+          <div key={group.category} className="flex flex-col gap-3 sm:flex-row sm:items-start">
+            <h3 className="w-48 shrink-0 text-sm font-semibold uppercase tracking-wider text-primary dark:text-primary-dark sm:mt-2">
               {group.category}
             </h3>
-
-            <ul className="space-y-3">
+            <div className="flex flex-wrap gap-2.5">
               {group.items.map((skill) => (
-                <li key={skill.name} className="flex items-center justify-between gap-2">
-                  <span className="text-sm leading-snug text-fg dark:text-fg-dark">
-                    {skill.name}
-                  </span>
-
-                  <span
-                    className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs capitalize ${
-                      LEVEL_STYLES[skill.level]
-                    }`}>
-                    {skill.level}
-                  </span>
-                </li>
+                <span
+                  key={skill.name}
+                  className="rounded-full border border-fg/10 bg-bg-alt px-4 py-1.5 text-[0.85rem] font-medium text-fg-alt shadow-sm transition-colors hover:border-primary/30 dark:border-fg-dark/10 dark:bg-bg-alt-dark dark:text-fg-alt-dark dark:hover:border-primary-dark/30">
+                  {skill.name}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </div>

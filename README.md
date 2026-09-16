@@ -56,7 +56,7 @@ Builds the app (`predeploy`) then publishes the `build` folder to the
 `gh-pages` branch via the `gh-pages` package. GitHub Pages is configured to
 serve from that branch.
 
-- `public/agung-prasetyo-cv.pdf` — resume/CV yang diunduh lewat tombol "Download CV".
+- `public/agung-prasetyo-resume.pdf` — resume/CV yang diunduh lewat tombol "Download CV".
 
 ## Deployment to GitHub Pages
 
@@ -114,6 +114,6 @@ as a colored level pill in the Skills section on the homepage.
 
 ## Updating the CV
 
-Replace `public/agung-prasetyo-cv.pdf` with your latest resume. The "Download
+Replace `public/agung-prasetyo-resume.pdf` with your latest resume. The "Download
 CV" button in the hero section links to it via the `resume` constant in
 `src/portfolio.ts`.

@@ -1,7 +1,5 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { projects } from '@/portfolio';
-import CardMedia from '@mui/material/CardMedia';
-import { ArrowBack } from '@mui/icons-material';
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -11,60 +9,89 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center">
-        <h2 className="mb-4">Project not found</h2>
-        <p className="mb-6 text-fg-alt dark:text-fg-alt-dark">
+        <h2 className="mb-2 text-2xl font-bold">Project not found</h2>
+        <p className="mb-6 text-fg-alt dark:text-[#888]">
           The project you requested does not exist.
         </p>
         <button
           type="button"
           onClick={() => navigate('/')}
-          className="btn btn--outline inline-flex items-center gap-2">
-          <ArrowBack /> Back to Home
+          className="text-primary hover:underline">
+          &larr; Back to Home
         </button>
       </div>
     );
   }
 
+  const metaParts = [];
+  if (project.period) metaParts.push(project.period);
+  if (project.type) metaParts.push(project.type);
+  const metaText = metaParts.join(' · ');
+
   return (
-    <section className="section mx-auto px-4">
-      <CardMedia
-        component="img"
-        height="360"
-        image={project.img}
-        alt={project.name}
-        decoding="async"
-        className="mb-8 rounded-2xl object-cover shadow-theme dark:shadow-theme-dark"
-      />
+    <section className="section mx-auto mt-12 max-w-3xl px-4">
+      <button
+        type="button"
+        onClick={() => navigate(-1)}
+        className="mb-8 flex items-center gap-2 text-[0.9rem] font-medium text-fg-alt transition-colors hover:text-primary dark:text-[#888] dark:hover:text-primary"
+        aria-label="go back">
+        &larr; Back
+      </button>
 
-      <h2 className="mb-2">{project.name}</h2>
-
-      {project.stack && (
-        <ul className="mb-6 flex flex-wrap gap-2">
-          {project.stack.map((item) => (
-            <li
-              key={item}
-              className="rounded-full bg-primary px-3 py-1 text-sm font-medium text-white dark:bg-primary-dark dark:text-bg-dark">
-              {item}
-            </li>
-          ))}
-        </ul>
+      {project.img && (
+        <div className="mb-8 overflow-hidden rounded-2xl border border-black/5 dark:border-white/[0.08]">
+          <img
+            src={project.img}
+            alt={project.name}
+            className="w-full object-cover"
+            style={{ maxHeight: '400px' }}
+          />
+        </div>
       )}
 
-      <p className="mb-8 leading-relaxed text-fg dark:text-fg-dark">{project.description}</p>
-
-      <div className="mb-6 flex items-center gap-4">
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          className="btn--icon flex items-center gap-1 text-fg dark:text-fg-dark hover:text-primary dark:hover:text-primary-dark"
-          aria-label="go back">
-          <ArrowBack /> <span className="text-sm">Back</span>
-        </button>
-
-        <a href={project.link} target="_blank" rel="noreferrer" className="btn btn--outline">
-          View Live
-        </a>
+      <div className="mb-10 border-b border-black/5 pb-8 dark:border-white/[0.08]">
+        <h1 className="mb-3 text-[2rem] font-bold leading-tight text-fg-alt dark:text-white sm:text-[2.5rem]">
+          {project.name}
+        </h1>
+        {metaText && (
+          <div className="text-[0.95rem] font-medium text-fg dark:text-[#666]">
+            {metaText}
+          </div>
+        )}
       </div>
+
+      <div className="mb-10 text-[1.05rem] leading-relaxed text-fg dark:text-[#999] whitespace-pre-wrap">
+        {project.description}
+      </div>
+
+      {project.stack && (
+        <div className="mb-12">
+          <h3 className="mb-4 text-[0.85rem] font-semibold uppercase tracking-wider text-fg-alt dark:text-[#888]">
+            Technologies Used
+          </h3>
+          <ul className="flex flex-wrap gap-2">
+            {project.stack.map((item) => (
+              <li
+                key={item}
+                className="rounded px-3 py-1 text-[0.8rem] font-medium bg-primary/10 text-primary">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {project.link && (
+        <div>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-fg-alt px-6 py-3 text-[0.9rem] font-semibold text-bg transition-transform hover:-translate-y-0.5 dark:bg-white dark:text-black">
+            Visit Project &rarr;
+          </a>
+        </div>
+      )}
     </section>
   );
 };

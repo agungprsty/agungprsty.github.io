@@ -9,12 +9,12 @@ export const about: About = {
   name: 'Agung Prasetyo',
   role: 'Software Engineer',
   description:
-    'Backend Developer with 5+ years of experience engineering production-ready systems using Python, PHP, and Go. Proven track record in designing scalable RESTful APIs, optimizing database performance, and driving integration efficiencies. Experienced in agile environments and passionate about building robust backend architectures and cloud-native solutions.',
+    'I am a passionate and results-driven Backend Engineer with over 5 years of hands-on experience engineering scalable, production-ready systems. My core expertise lies in designing robust backend architectures and microservices using Python, PHP, and Go. Throughout my career, I have successfully developed high-performance RESTful APIs, optimized complex database queries, and implemented efficient message queuing and caching strategies that significantly improved system responsiveness and reliability. \n I have a strong foundation in Domain-Driven Design (DDD) and Clean Architecture principles, ensuring that the software I build is not only performant but also highly maintainable and adaptable to changing business needs. I thrive in agile, collaborative environments and am deeply committed to continuous learning, exploring modern cloud-native solutions, and driving impactful engineering practices.',
   social: {
-    facebook: 'https://fb.com/agungprasetyo06',
-    twitter: 'https://twitter.com/agprsty02',
+    x: 'https://twitter.com/agprsty02',
     linkedin: 'https://linkedin.com/in/ag-prasetyo',
-    github: 'https://github.com/agungprsty'
+    github: 'https://github.com/agungprsty',
+    medium: 'https://medium.com/@agungprsty'
   }
 };
 
@@ -27,6 +27,8 @@ export const projects: Project[] = [
     stack: ['PHP', 'Laravel', 'MySQL', 'REST API', 'Payment Gateway'],
     img: '/projects/himurastore.webp',
     link: 'https://himurastore.com',
+    period: 'Jan 2023 - Present',
+    type: 'Freelance',
     pin: true
   },
   {
@@ -37,7 +39,9 @@ export const projects: Project[] = [
     stack: ['PHP', 'Lumen', 'JSON', 'REST API', 'CORS'],
     img: '/projects/restapi.webp',
     link: 'https://github.com/agungprsty/fake-api/',
-    createdAt: '2022-08-22'
+    createdAt: '2022-08-22',
+    period: 'Aug 2022',
+    type: 'Personal Project'
   },
   {
     id: 'template-project',
@@ -47,7 +51,9 @@ export const projects: Project[] = [
     stack: ['Docker', 'Docker Compose', 'PHP', 'Laravel', 'MySQL', 'Nginx', 'Redis'],
     img: '/projects/laravel-docker.webp',
     link: 'https://github.com/agungprsty/laravel-with-docker',
-    createdAt: '2022-08-10'
+    createdAt: '2022-08-10',
+    period: 'Aug 2022',
+    type: 'Personal Project'
   },
   {
     id: 'ema-scanner',
@@ -57,7 +63,9 @@ export const projects: Project[] = [
     stack: ['Python', 'FastAPI', 'Binance API', 'Firebase', 'Pandas', 'Docker'],
     img: '/projects/ema-scanner.webp',
     link: 'https://github.com/agungprsty/ema_scanner',
-    createdAt: '2026-03-23'
+    createdAt: '2026-03-23',
+    period: 'Mar 2026 - Present',
+    type: 'Personal Project'
   },
   {
     id: 'wasaya',
@@ -68,6 +76,8 @@ export const projects: Project[] = [
     img: '/projects/wasaya.webp',
     link: 'https://github.com/agungprsty/wasaya',
     createdAt: '2026-05-23',
+    period: 'May 2026 - Present',
+    type: 'Personal Project',
     pin: true
   },
   {
@@ -78,7 +88,9 @@ export const projects: Project[] = [
     stack: ['Python', 'FastAPI', 'MongoDB', 'Redis', 'Docker', 'JWT'],
     img: '/projects/fastapi-template.webp',
     link: 'https://github.com/agungprsty/Fastapi-Template-Project',
-    createdAt: '2025-07-21'
+    createdAt: '2025-07-21',
+    period: 'Jul 2025',
+    type: 'Personal Project'
   },
   {
     id: 'sso-laravel-passport',
@@ -88,7 +100,9 @@ export const projects: Project[] = [
     stack: ['PHP', 'Laravel', 'Laravel Passport', 'OAuth2', 'Docker', 'MySQL'],
     img: '/projects/ssolaravel.webp',
     link: 'https://github.com/agungprsty/sso-with-laravel-passport',
-    createdAt: '2022-11-27'
+    createdAt: '2022-11-27',
+    period: 'Nov 2022',
+    type: 'Personal Project'
   }
 ].sort((a, b) => {
   const pinDiff = Number(b.pin ?? false) - Number(a.pin ?? false);
@@ -101,8 +115,9 @@ export const experience: Experience[] = [
     id: 'dsi-backend',
     company: 'PT Digital Sekuriti Indonesia',
     location: 'Yogyakarta',
-    role: 'Backend Developer',
+    role: 'Backend Engineer',
     period: 'Jan 2024 - Sekarang',
+    description: 'Served as the PIC (Person In Charge) for backend engineering initiatives, spearheading the transition from a monolithic legacy codebase to a scalable, clean microservices architecture using Python (Flask), Node.js, PHP (Laravel). Architected and maintained high-performance RESTful APIs serving thousands of daily users, while aggressively optimizing PostgreSQL/MySQL queries and implementing Redis caching to reduce average response times by 35%. Established Docker-containerized deployment workflows to ensure high availability and environment consistency across production servers.',
     points: [
       'Developed and maintained RESTful APIs serving thousands of daily users with high availability and stable performance',
       'Integrated 10+ third-party APIs, reducing manual processing time by up to 40%',
@@ -121,6 +136,7 @@ export const experience: Experience[] = [
     location: 'Yogyakarta',
     role: 'Junior Web Developer',
     period: 'Jun 2021 - Dec 2023',
+    description: 'Developed and maintained over 5 highly responsive web applications from the ground up, translating complex UI/UX designs from Figma into functional, cross-device compatible interfaces using modern JavaScript, jQuery, AJAX, and JSON. Actively collaborated with a cross-functional team of engineers and designers using agile Git-based workflows to accelerate feature delivery. Focused heavily on front-end performance, successfully improving website loading speeds by up to 30% through advanced asset minification, and the strategic implementation of efficient browser caching techniques.',
     points: [
       'Developed 5+ responsive web applications that improved mobile user engagement by 20% and ensured cross-device accessibility',
       'Improved website loading speed by up to 30% through advanced asset optimization, minification, and implementing efficient browser caching strategies',
@@ -135,6 +151,7 @@ export const experience: Experience[] = [
     location: 'Jakarta',
     role: 'Warehouse Lead',
     period: 'Sep 2020 - May 2021',
+    description: 'Directed daily logistics and warehouse operations, actively managing and mentoring a team of over 10 staff members to improve overall productivity by 15%. Implemented rigorous systematic audit processes and standardized documentation workflows that successfully increased inventory accuracy by 20%. Conducted regular safety training sessions and enforced compliance with workplace safety standards, effectively cultivating a safer working environment and drastically reducing the occurrence of workplace incidents.',
     points: [
       'Led daily operations for a team of 10+ staff members, strengthening communication and improving overall team productivity by 15%',
       'Improved inventory accuracy by 20% through systematic audits and documentation',
@@ -147,6 +164,7 @@ export const experience: Experience[] = [
     location: 'Jakarta',
     role: 'Office Boy',
     period: 'Oct 2019 - Aug 2020',
+    description: 'Ensured the seamless daily operation of office facilities by maintaining an exceptionally clean, organized, and welcoming work environment for more than 30 full-time employees. Provided critical on-the-ground support for various company-wide events, meetings, and team-building activities. Demonstrated a strong work ethic and proactive attitude, contributing directly to higher employee engagement and ensuring that all logistical needs within the office space were met promptly and efficiently.',
     points: [
       'Maintained the cleanliness and tidiness of office facilities, supporting daily operations of 30+ employees',
       'Supported company events and activities, contributing to employee engagement'
@@ -158,12 +176,12 @@ export const skills: SkillCategory[] = [
   {
     category: 'Backend',
     items: [
-      { name: 'Python (FastAPI)', level: 'advanced' },
-      { name: 'PHP (Laravel, CI)', level: 'advanced' },
-      { name: 'REST API Design', level: 'advanced' },
+      { name: 'Python', level: 'advanced' },
+      { name: 'PHP', level: 'advanced' },
       { name: 'Typescript', level: 'advanced' },
       { name: 'Go', level: 'intermediate' },
-      { name: 'Rust', level: 'beginner' }
+      { name: 'Rust', level: 'beginner' },
+      { name: 'REST API Design', level: 'advanced' }
     ]
   },
   {
@@ -201,4 +219,4 @@ export const contact: Contact = {
   telegram: 'a9ungprasetyo'
 };
 
-export const resume = '/agung-prasetyo-cv.pdf';
+export const resume = '/agung-prasetyo-resume.pdf';
