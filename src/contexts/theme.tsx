@@ -6,12 +6,12 @@ interface ThemeContextValue {
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
-  themeName: 'light',
+  themeName: 'dark',
   toggleTheme: () => {}
 });
 
 function ThemeProvider({ children }: { children: ReactNode }) {
-  const [themeName, setThemeName] = useState('light');
+  const [themeName, setThemeName] = useState('dark');
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('themeName');
@@ -19,11 +19,7 @@ function ThemeProvider({ children }: { children: ReactNode }) {
     if (storedTheme) {
       setThemeName(storedTheme);
     } else {
-      const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      setThemeName(darkMediaQuery.matches ? 'dark' : 'light');
-      darkMediaQuery.addEventListener('change', (e) => {
-        setThemeName(e.matches ? 'dark' : 'light');
-      });
+      setThemeName('dark');
     }
   }, []);
 

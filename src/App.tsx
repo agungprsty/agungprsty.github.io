@@ -19,7 +19,7 @@ const App = () => {
   return (
     <div
       id="top"
-      className={`${themeName === 'dark' ? 'dark' : ''} font-sans`}
+      className={`${themeName === 'dark' ? 'dark' : ''} font-sans transition-colors duration-300`}
       style={{
         lineHeight: 1.5,
         color: 'var(--clr-fg)',

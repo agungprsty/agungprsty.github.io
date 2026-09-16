@@ -181,7 +181,6 @@ export const skills: SkillCategory[] = [
       { name: 'Typescript', level: 'advanced' },
       { name: 'Go', level: 'intermediate' },
       { name: 'Rust', level: 'beginner' },
-      { name: 'REST API Design', level: 'advanced' }
     ]
   },
   {
@@ -190,8 +189,7 @@ export const skills: SkillCategory[] = [
       { name: 'MySQL', level: 'advanced' },
       { name: 'PostgreSQL', level: 'advanced' },
       { name: 'MongoDB', level: 'advanced' },
-      { name: 'Redis', level: 'advanced' },
-      { name: 'Firebase', level: 'intermediate' }
+      { name: 'Redis', level: 'advanced' }
     ]
   },
   {
@@ -209,7 +207,8 @@ export const skills: SkillCategory[] = [
       { name: 'React/Next.js', level: 'advanced' },
       { name: 'Vue/Nuxt.js', level: 'advanced' },
       { name: 'TailwindCSS', level: 'advanced' },
-      { name: 'OAuth2 & Message Queue', level: 'advanced' }
+      { name: 'OAuth2 & Message Queue', level: 'advanced' },
+      { name: 'REST API Design', level: 'advanced' }
     ]
   }
 ];
