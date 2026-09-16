@@ -1,7 +1,7 @@
 import { about } from '@/portfolio';
 
 const About = () => {
-  const { name, role, description, social } = about;
+  const { name, role, description } = about;
 
   return (
     <div className="flex flex-col max-[600px]:items-start mt-12 max-[600px]:mt-8">

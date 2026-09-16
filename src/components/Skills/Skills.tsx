@@ -1,5 +1,4 @@
 import { skills } from '@/portfolio';
-import type { SkillLevel } from '@/types/portfolio';
 
 const Skills = () => {
   if (!skills.length) return null;

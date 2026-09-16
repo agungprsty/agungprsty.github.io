@@ -1,16 +1,13 @@
 import { useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import {
   Brightness2,
   WbSunnyRounded,
-  Home,
   Folder,
-  Article,
-  Mail,
   Work
 } from '@mui/icons-material';
 import { ThemeContext } from '@/contexts/theme';
-import { projects, experience, contact } from '@/portfolio';
+import { projects, experience } from '@/portfolio';
 
 const Navbar = () => {
   const { themeName, toggleTheme } = useContext(ThemeContext);
@@ -36,10 +33,6 @@ const Navbar = () => {
       : [])
   ];
 
-  const linkClass = (href: string) =>
-    `relative flex flex-col items-center gap-0.5 transition-colors ${
-      isActive(href) ? 'text-primary dark:text-primary-dark' : 'text-fg dark:text-fg-dark'
-    }`;
 
   return (
     <>
@@ -50,9 +43,7 @@ const Navbar = () => {
             <li key={item.label} className="ml-6">
               <a
                 href={item.href}
-                className={`link--nav ${isActive(item.href) ? 'link--nav--active' : ''}`}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noreferrer' : undefined}>
+                className={`link--nav ${isActive(item.href) ? 'link--nav--active' : ''}`}>
                 {item.label}
               </a>
             </li>
