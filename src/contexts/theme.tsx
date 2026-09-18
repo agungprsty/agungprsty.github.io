@@ -6,12 +6,12 @@ interface ThemeContextValue {
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
-  themeName: 'dark',
+  themeName: 'light',
   toggleTheme: () => {}
 });
 
 function ThemeProvider({ children }: { children: ReactNode }) {
-  const [themeName, setThemeName] = useState('dark');
+  const [themeName, setThemeName] = useState('light');
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('themeName');
@@ -19,7 +19,7 @@ function ThemeProvider({ children }: { children: ReactNode }) {
     if (storedTheme) {
       setThemeName(storedTheme);
     } else {
-      setThemeName('dark');
+      setThemeName('light');
     }
   }, []);
 
