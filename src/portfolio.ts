@@ -24,19 +24,19 @@ export const projects: Project[] = [
     name: 'Himura Store',
     description:
       'A production-grade e-commerce platform for digital game top-ups serving thousands of daily transactions. Built with a modular Laravel architecture featuring real-time order processing, automated payment verification via third-party APIs, and an admin dashboard for inventory and order management. Optimized database queries reduced page load time by 40%, and the system maintains 99.9% uptime with 24/7 automated processing pipeline.',
-    stack: ['PHP', 'Laravel', 'MySQL', 'REST API', 'Payment Gateway'],
+    stack: ['PHP', 'Laravel', 'MySQL', 'Payment Gateway'],
     img: '/projects/himurastore.webp',
     link: 'https://himurastore.com',
-    period: 'Jan 2023 - Present',
-    type: 'Freelance',
-    pin: true
+    createdAt: '2023-01-22',
+    period: 'Jan 2023 - May 2023',
+    type: 'Freelance'
   },
   {
     id: 'jsonfaker',
     name: 'JSONFaker',
     description:
       'A free REST API service designed to accelerate frontend and mobile development by providing realistic mock data on demand. Built with Lumen microframework for minimal overhead and fast response times (~50ms average). Supports dynamic endpoint generation, custom response schemas, and cross-origin requests (CORS). Serves as a developer productivity tool that eliminates backend dependency during prototyping phases.',
-    stack: ['PHP', 'Lumen', 'JSON', 'REST API', 'CORS'],
+    stack: ['PHP', 'Lumen', 'REST API'],
     img: '/projects/restapi.webp',
     link: 'https://github.com/agungprsty/fake-api/',
     createdAt: '2022-08-22',
@@ -45,10 +45,10 @@ export const projects: Project[] = [
   },
   {
     id: 'template-project',
-    name: 'Template Project',
+    name: 'Laravel Template Project',
     description:
       'A containerized Laravel development environment using Docker Compose that streamlines team onboarding and eliminates "it works on my machine" issues. Defines isolated services for the web server (Nginx), application (PHP-FPM), database (MySQL), and cache (Redis). Features hot-reload for local development, production-ready service configuration, and a single-command setup workflow that reduced new developer onboarding time from 2 hours to 15 minutes.',
-    stack: ['Docker', 'Docker Compose', 'PHP', 'Laravel', 'MySQL', 'Nginx', 'Redis'],
+    stack: ['Docker', 'PHP', 'Laravel', 'MySQL', 'Redis'],
     img: '/projects/laravel-docker.webp',
     link: 'https://github.com/agungprsty/laravel-with-docker',
     createdAt: '2022-08-10',
@@ -56,36 +56,23 @@ export const projects: Project[] = [
     type: 'Personal Project'
   },
   {
-    id: 'ema-scanner',
-    name: 'EMA Scanner',
-    description:
-      'A production-grade quantitative trading bot for Binance USDⓈ-M Futures that implements an EMA7/EMA50 cross strategy with a 4H macro trend filter. Features a two-stage screening pipeline, ATR-based dynamic stop loss, partial take-profit with automated breakeven management, and concurrent symbol scanning (10-way parallelism reducing scan time from 40s to ~5s). Built with FastAPI, Firebase Firestore for crash-resistant state persistence, and real-time Telegram alerts. Includes a full-featured historical backtesting engine with interactive Plotly chart output, achieving a 64% win rate and 2.14 profit factor in backtests.',
-    stack: ['Python', 'FastAPI', 'Binance API', 'Firebase', 'Pandas', 'Docker'],
-    img: '/projects/ema-scanner.webp',
-    link: 'https://github.com/agungprsty/ema_scanner',
-    createdAt: '2026-03-23',
-    period: 'Mar 2026 - Present',
-    type: 'Personal Project'
-  },
-  {
     id: 'wasaya',
     name: 'WhatsApp Gateway',
     description:
       'A full-featured WhatsApp Gateway built with Next.js 16, PostgreSQL, and Baileys WebSocket library. Enables sending and receiving WhatsApp messages through a web dashboard or REST API. Features include multi-device connection (up to 4 devices), broadcast messaging via BullMQ queue with tier-based throttling, scheduled/recurring messages, keyword-based chatbot auto-reply rules, contact management with groups, webhook integration with HMAC-SHA256 signed delivery, and usage-based subscription tiers. Implements safety monitoring with automatic quarantine mode, human-like typing delays, and per-conversation rate limiting to prevent account bans.',
-    stack: ['TypeScript', 'Next.js', 'PostgreSQL', 'Redis', 'BullMQ', 'Docker'],
+    stack: ['TypeScript', 'Next.js', 'PostgreSQL', 'Redis'],
     img: '/projects/wasaya.webp',
     link: 'https://github.com/agungprsty/wasaya',
-    createdAt: '2026-05-23',
-    period: 'May 2026 - Present',
-    type: 'Personal Project',
-    pin: true
+    createdAt: '2026-01-23',
+    period: 'Jan 2026 - Present',
+    type: 'Personal Project'
   },
   {
     id: 'fastapi-template',
     name: 'FastAPI Clean Architecture',
     description:
       'A production-ready Python backend template following Domain-Driven Design (DDD) and Clean Architecture principles. Built with FastAPI and Beanie ODM for MongoDB, featuring JWT authentication, dependency injection, async Redis integration, structured error handling with unified response format, JSON-structured logging with sensitive field masking, and comprehensive test coverage using pytest. Implements a clear separation of domain, infrastructure, and application layers, making it suitable for building maintainable and scalable microservices.',
-    stack: ['Python', 'FastAPI', 'MongoDB', 'Redis', 'Docker', 'JWT'],
+    stack: ['Python', 'FastAPI', 'MongoDB', 'Redis', 'Docker'],
     img: '/projects/fastapi-template.webp',
     link: 'https://github.com/agungprsty/Fastapi-Template-Project',
     createdAt: '2025-07-21',
@@ -97,12 +84,85 @@ export const projects: Project[] = [
     name: 'SSO Laravel Passport',
     description:
       'A fully-fledged OAuth2 SSO (Single Sign-On) server implementation using Laravel Passport, with 7 stars and 3 forks on GitHub. Demonstrates the complete OAuth2 authorization flow including client credential and authorization code grants. Features a Dockerized environment with separate OAuth server and client applications, token generation dashboard, and step-by-step integration guide. Serves as a reusable reference architecture for implementing centralized authentication across microservices.',
-    stack: ['PHP', 'Laravel', 'Laravel Passport', 'OAuth2', 'Docker', 'MySQL'],
+    stack: ['PHP', 'Laravel Passport', 'MySQL'],
     img: '/projects/ssolaravel.webp',
     link: 'https://github.com/agungprsty/sso-with-laravel-passport',
     createdAt: '2022-11-27',
     period: 'Nov 2022',
     type: 'Personal Project'
+  },
+  {
+    id: 'torcons-ai',
+    name: 'Torcons AI — Chat Platform & MLOps Dashboard',
+    description:
+      'An enterprise AI chat platform at https://chat.torcons.ai/ delivering a production-grade LLM experience. Engineered the frontend in Svelte with best-practice component architecture, state management, and responsive design, implementing tool-calling (function calling) orchestration, streaming responses, and robust multi-session chat history management with tier-based upgrade integration. Built an internal MLOps dashboard in FastAPI and Python to orchestrate pre-training, fine-tuning, and post-training pipelines — including model quantization via TurboQuant and alignment ablation using Abriteration, Heretic, and uncensored techniques to optimize inference cost, latency, and model behavior for production deployment.',
+    stack: ['Svelte', 'Node.js', 'FastAPI', 'Python', 'TurboQuant', 'Redis'],
+    img: '/projects/torcons-ai.webp',
+    link: 'https://chat.torcons.ai',
+    createdAt: '2026-05-01',
+    period: 'May 2026 - Present',
+    type: 'Professional'
+  },
+  {
+    id: 'ai-care',
+    name: 'AI Care — Healthcare Ecosystem',
+    description:
+      'A large-scale healthcare ecosystem engineered from scratch over 3.5 years and scaled into two production-grade applications — AI Care for patients and AI Care Partners for doctors — serving as the flagship digital health platform of PT Digital Sekuriti Indonesia. Architected as microservices with Python Flask as the primary backend, MongoDB for primary storage, Redis for caching and session management, and RabbitMQ + Celery for distributed asynchronous job processing (background tasks, scheduled jobs, and heavy workloads decoupled from API latency). Integrated Firebase for reCAPTCHA verification and FCM for cross-platform push notifications (consultation updates, reminders, and user engagement), and implemented real-time doctor-patient communication via Express.js WebSocket services alongside a Laravel-based admin dashboard for operational management.\n\nBuilt automated medical document generation using PDFKit for consultation resumes, prescriptions, and reference letters, ensuring consistent and print-ready clinical outputs. Integrated Midtrans for secure payment processing, Qontak WhatsApp Gateway for transactional and notification messaging, and AWS S3 for scalable object storage of medical files and assets. The platform was engineered for high availability, data integrity, and regulatory compliance, supporting thousands of daily users across the end-to-end healthcare workflow with robust, maintainable, and extensible service boundaries.',
+    stack: ['Python', 'Flask', 'MongoDB', 'Redis', 'Celery', 'RabbitMQ', 'Firebase', 'AWS S3'],
+    img: '/projects/ai-care.webp',
+    link: 'https://ai-care.id',
+    createdAt: '2022-07-01',
+    period: 'Jul 2022 - Dec 2025',
+    type: 'Professional',
+    pin: true
+  },
+  {
+    id: 'nu-tech-ctf',
+    name: 'NU Tech Capture The Flag (CTF)',
+    description:
+      'A Capture The Flag competition platform for NU Tech built with Python Flask and vanilla JavaScript/HTML. Developed the frontend for challenge presentation, dynamic scoring, flag submission, and real-time leaderboard updates. Focused on responsive UI, secure session handling, and performant load times to support concurrent participants during the live competitive event, ensuring a smooth and engaging experience for all competitors.',
+    stack: ['Python', 'Flask', 'JavaScript', 'HTML'],
+    img: '/projects/nu-tech-ctf.webp',
+    link: '',
+    createdAt: '2022-12-01',
+    period: 'Dec 2022',
+    type: 'Professional'
+  },
+  {
+    id: 'klinia',
+    name: 'Klinia — Clinic Management System',
+    description:
+      'A clinic management system (klinia.id) digitizing end-to-end operational workflows — patient records, appointments, queue management, medical inventory, and billing. Contributed as full-stack developer handling both backend business logic in PHP CodeIgniter 3 and frontend interfaces, bridging clinical requirements into efficient, user-friendly workflows. Streamlined manual processes into a centralized system, improving data accuracy, staff productivity, and operational visibility for clinic personnel.',
+    stack: ['PHP', 'CodeIgniter 3', 'MySQL', 'JavaScript'],
+    img: '/projects/klinia.webp',
+    link: 'https://klinia.id',
+    createdAt: '2022-01-01',
+    period: 'Jan 2022 - Oct 2022',
+    type: 'Professional'
+  },
+  {
+    id: 'lms-get-kalm',
+    name: 'LMS Get-Kalm',
+    description:
+      'A Learning Management System for get-kalm.com (KALM) delivering course creation, enrollment, progress tracking, and content delivery for mental health education. Developed core LMS features in PHP Laravel with OAuth2-based Single Sign-On for secure cross-service authentication, enabling modular course management and seamless user experience for learners and instructors. Supported scalable content delivery and integrated with the broader KALM counseling ecosystem serving 50,000+ users.',
+    stack: ['PHP', 'Laravel', 'MySQL', 'OAuth2'],
+    img: '/projects/lms-get-kalm.webp',
+    link: 'https://get-kalm.com',
+    createdAt: '2021-08-01',
+    period: 'Aug 2021 - Dec 2021',
+    type: 'Professional'
+  },
+  {
+    id: 'rumahberkat-dashboard',
+    name: 'Rumah Berkat — Master Dashboard',
+    description:
+      'A centralized master admin dashboard for rumahberkat.com consolidating multi-service operations and analytics. Developed frontend interfaces in PHP Laravel to provide unified monitoring, user and content management, and reporting tools — improving operational visibility and administrative efficiency across integrated services. Implemented role-based access, data visualization, and streamlined workflows for centralized governance and decision-making.',
+    stack: ['PHP', 'Laravel', 'MySQL', 'JavaScript'],
+    img: '/projects/rumahberkat-dashboard.webp',
+    link: 'https://rumahberkat.com',
+    createdAt: '2021-06-01',
+    period: 'Jun 2021 - Aug 2021',
+    type: 'Professional'
   }
 ].sort((a, b) => {
   const pinDiff = Number(b.pin ?? false) - Number(a.pin ?? false);
@@ -180,7 +240,7 @@ export const skills: SkillCategory[] = [
       { name: 'PHP', level: 'advanced' },
       { name: 'Typescript', level: 'advanced' },
       { name: 'Go', level: 'intermediate' },
-      { name: 'Rust', level: 'beginner' },
+      { name: 'Rust', level: 'beginner' }
     ]
   },
   {
@@ -206,8 +266,6 @@ export const skills: SkillCategory[] = [
     items: [
       { name: 'React/Next.js', level: 'advanced' },
       { name: 'Vue/Nuxt.js', level: 'advanced' },
-      { name: 'TailwindCSS', level: 'advanced' },
-      { name: 'OAuth2 & Message Queue', level: 'advanced' },
       { name: 'REST API Design', level: 'advanced' }
     ]
   }

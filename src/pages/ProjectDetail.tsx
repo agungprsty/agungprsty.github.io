@@ -50,8 +50,25 @@ const ProjectDetail = () => {
       )}
 
       <div className="mb-10 border-b border-black/5 pb-8 dark:border-white/[0.08]">
-        <h1 className="mb-3 text-[2rem] font-bold leading-tight text-fg-alt dark:text-white sm:text-[2.5rem]">
+        <h1 className="mb-3 flex flex-wrap items-center gap-3 text-[2rem] font-bold leading-tight text-fg-alt dark:text-white sm:text-[2.5rem]">
           {project.name}
+          {project.pin && (
+            <span className="inline-flex text-primary" aria-label="Pinned project" title="Pinned">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true">
+                <line x1="12" y1="17" x2="12" y2="22" />
+                <path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z" />
+              </svg>
+            </span>
+          )}
         </h1>
         {metaText && (
           <div className="text-[0.95rem] font-medium text-fg dark:text-[#666]">
