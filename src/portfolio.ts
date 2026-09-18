@@ -1,4 +1,4 @@
-import type { Header, About, Project, Experience, SkillCategory, Contact } from '@/types/portfolio';
+import type { Header, About, Project, Experience, Contact } from '@/types/portfolio';
 
 export const header: Header = {
   homepage: 'https://agungprsty.github.io/',
@@ -232,43 +232,26 @@ export const experience: Experience[] = [
   }
 ];
 
-export const skills: SkillCategory[] = [
-  {
-    category: 'Backend',
-    items: [
-      { name: 'Python', level: 'advanced' },
-      { name: 'PHP', level: 'advanced' },
-      { name: 'Typescript', level: 'advanced' },
-      { name: 'Go', level: 'intermediate' },
-      { name: 'Rust', level: 'beginner' }
-    ]
-  },
-  {
-    category: 'Database & Cache',
-    items: [
-      { name: 'MySQL', level: 'advanced' },
-      { name: 'PostgreSQL', level: 'advanced' },
-      { name: 'MongoDB', level: 'advanced' },
-      { name: 'Redis', level: 'advanced' }
-    ]
-  },
-  {
-    category: 'DevOps & Tools',
-    items: [
-      { name: 'Docker', level: 'advanced' },
-      { name: 'Git & GitHub', level: 'advanced' },
-      { name: 'Nginx', level: 'intermediate' },
-      { name: 'Linux', level: 'intermediate' }
-    ]
-  },
-  {
-    category: 'Frontend & Others',
-    items: [
-      { name: 'React/Next.js', level: 'advanced' },
-      { name: 'Vue/Nuxt.js', level: 'advanced' },
-      { name: 'REST API Design', level: 'advanced' }
-    ]
-  }
+export const skills: string[] = [
+  'Python',
+  'PHP',
+  'TypeScript',
+  'Go',
+  'MySQL',
+  'PostgreSQL',
+  'MongoDB',
+  'Redis',
+  'Docker',
+  'Git & GitHub',
+  'Linux',
+  'Nginx',
+  'Vue',
+  'React',
+  'Microservices',
+  'CI/CD Automation',
+  'Clean Architecture',
+  'REST API & GraphQL',
+  'Team Leadership'
 ];
 
 export const contact: Contact = {

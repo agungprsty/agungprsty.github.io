@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 center mx-auto h-[5em] w-full px-6 md:px-12 justify-between bg-bg/90 backdrop-blur-md dark:bg-bg-dark/90 transition-all duration-300 border-b border-fg/5 dark:border-fg-dark/5">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between">
+      <div className="mx-auto flex w-full max-w-5xl items-center justify-between font-bold">
         <h3>
           {homepage ? (
           <a href={homepage} className="link flex items-center">

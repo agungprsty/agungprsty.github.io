@@ -7,7 +7,7 @@ const Footer = () => (
       <Favorite /> &nbsp;di Yogyakarta
     </span>
     <a href="https://github.com/agungprsty" className="link text-[0.9rem] font-semibold">
-      {new Date().getFullYear()} &copy; agungprasetyo.github.io
+      &copy; {new Date().getFullYear()} Agung Prasetyo
     </a>
   </footer>
 );

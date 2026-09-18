@@ -17,10 +17,10 @@ const About = () => {
         <div className="flex flex-col">
           {name && (
             <h1>
-              <span className="link font-semibold">{name}.</span>
+              <span className="link font-semibold">{name}</span>
             </h1>
           )}
-          {role && <h2 className="mt-2 sm:mt-4">A {role}.</h2>}
+          {role && <h2 className="mt-2 sm:mt-4">A {role}</h2>}
         </div>
       </div>
 

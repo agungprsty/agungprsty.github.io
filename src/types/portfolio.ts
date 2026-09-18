@@ -45,24 +45,14 @@ export interface Experience {
   points: string[];
 }
 
-export type SkillLevel = 'beginner' | 'intermediate' | 'advanced';
-
-export interface Skill {
-  name: string;
-  level: SkillLevel;
-}
-
-export interface SkillCategory {
-  category: string;
-  items: Skill[];
-}
+export type Skill = string;
 
 export interface PortfolioData {
   header: Header;
   about: About;
   projects: Project[];
   experience: Experience[];
-  skills: SkillCategory[];
+  skills: Skill[];
   contact: Contact;
   resume: string;
 }
