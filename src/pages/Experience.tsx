@@ -22,8 +22,13 @@ const Experience = () => {
 
         <div className="flex flex-col">
           {experience.map((item) => (
-            <div key={item.id} className="relative pl-6 pb-10 border-l border-black/10 dark:border-white/[0.08] last:pb-0">
-              <span className="absolute -left-[4px] top-2 h-[7px] w-[7px] rounded-full bg-primary" aria-hidden />
+            <div
+              key={item.id}
+              className="relative pl-6 pb-10 border-l border-black/10 dark:border-white/[0.08] last:pb-0">
+              <span
+                className="absolute -left-[4px] top-2 h-[7px] w-[7px] rounded-full bg-primary"
+                aria-hidden
+              />
 
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
                 <span className="text-[1rem] font-semibold text-fg-alt dark:text-white">
@@ -34,9 +39,7 @@ const Experience = () => {
                 </span>
               </div>
 
-              <div className="text-[0.9rem] text-primary mb-2">
-                {item.company}
-              </div>
+              <div className="text-[0.9rem] text-primary mb-2">{item.company}</div>
 
               {item.description && (
                 <div className="text-[0.9rem] leading-relaxed text-fg dark:text-[#999] mb-3">
@@ -47,7 +50,9 @@ const Experience = () => {
               {item.points.length > 0 && (
                 <ul className="space-y-1">
                   {item.points.map((point, i) => (
-                    <li key={i} className="relative pl-4 text-[0.85rem] leading-relaxed text-fg dark:text-[#888]">
+                    <li
+                      key={i}
+                      className="relative pl-4 text-[0.85rem] leading-relaxed text-fg dark:text-[#888]">
                       <span className="absolute left-0 text-[#555] select-none">&rarr;</span>
                       {point}
                     </li>

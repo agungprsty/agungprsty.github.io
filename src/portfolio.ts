@@ -57,7 +57,7 @@ export const projects: Project[] = [
   },
   {
     id: 'wasaya',
-    name: 'WhatsApp Gateway',
+    name: 'TemanWA — WhatsApp Gateway',
     description:
       'A full-featured WhatsApp Gateway built with Next.js 16, PostgreSQL, and Baileys WebSocket library. Enables sending and receiving WhatsApp messages through a web dashboard or REST API. Features include multi-device connection (up to 4 devices), broadcast messaging via BullMQ queue with tier-based throttling, scheduled/recurring messages, keyword-based chatbot auto-reply rules, contact management with groups, webhook integration with HMAC-SHA256 signed delivery, and usage-based subscription tiers. Implements safety monitoring with automatic quarantine mode, human-like typing delays, and per-conversation rate limiting to prevent account bans.',
     stack: ['TypeScript', 'Next.js', 'PostgreSQL', 'Redis'],
@@ -68,15 +68,15 @@ export const projects: Project[] = [
     type: 'Personal Project'
   },
   {
-    id: 'fastapi-template',
-    name: 'FastAPI Clean Architecture',
+    id: 'kanikah',
+    name: 'Kanikah — Wedding Planning for Couples',
     description:
-      'A production-ready Python backend template following Domain-Driven Design (DDD) and Clean Architecture principles. Built with FastAPI and Beanie ODM for MongoDB, featuring JWT authentication, dependency injection, async Redis integration, structured error handling with unified response format, JSON-structured logging with sensitive field masking, and comprehensive test coverage using pytest. Implements a clear separation of domain, infrastructure, and application layers, making it suitable for building maintainable and scalable microservices.',
-    stack: ['Python', 'FastAPI', 'MongoDB', 'Redis', 'Docker'],
-    img: '/projects/fastapi-template.webp',
-    link: 'https://github.com/agungprsty/Fastapi-Template-Project',
-    createdAt: '2025-07-21',
-    period: 'Jul 2025',
+      'A digital wedding planning workspace (kanikah.my.id) that lets couples organize their big day without stress or miscommunication. Built with a NuxtJS (Vue 3) frontend on a FastAPI backend with PostgreSQL, featuring real-time two-account collaboration via 8-character pair codes, automated 12-month checklists generated from the wedding date, guest list & RSVP management with family-side grouping, budget tracking with 12-month cash-flow charts, vendor & deposit management, gifts/mahar/seserahan registry, and a centralized KUA document checklist. Implements JWT & Google OAuth authentication, email-based password reset, and free/premium subscription tiers.',
+    stack: ['Vue', 'NuxtJS', 'FastAPI', 'PostgreSQL'],
+    img: '/projects/kanikah.webp',
+    link: 'https://kanikah.my.id',
+    createdAt: '2025-12-01',
+    period: 'Des 2025 - Agu 2026',
     type: 'Personal Project'
   },
   {
@@ -108,7 +108,7 @@ export const projects: Project[] = [
     name: 'AI Care — Healthcare Ecosystem',
     description:
       'A large-scale healthcare ecosystem engineered from scratch over 3.5 years and scaled into two production-grade applications — AI Care for patients and AI Care Partners for doctors — serving as the flagship digital health platform of PT Digital Sekuriti Indonesia. Architected as microservices with Python Flask as the primary backend, MongoDB for primary storage, Redis for caching and session management, and RabbitMQ + Celery for distributed asynchronous job processing (background tasks, scheduled jobs, and heavy workloads decoupled from API latency). Integrated Firebase for reCAPTCHA verification and FCM for cross-platform push notifications (consultation updates, reminders, and user engagement), and implemented real-time doctor-patient communication via Express.js WebSocket services alongside a Laravel-based admin dashboard for operational management.\n\nBuilt automated medical document generation using PDFKit for consultation resumes, prescriptions, and reference letters, ensuring consistent and print-ready clinical outputs. Integrated Midtrans for secure payment processing, Qontak WhatsApp Gateway for transactional and notification messaging, and AWS S3 for scalable object storage of medical files and assets. The platform was engineered for high availability, data integrity, and regulatory compliance, supporting thousands of daily users across the end-to-end healthcare workflow with robust, maintainable, and extensible service boundaries.',
-    stack: ['Python', 'Flask', 'MongoDB', 'Redis', 'Celery', 'RabbitMQ', 'Firebase', 'AWS S3'],
+    stack: ['Python', 'Flask', 'MongoDB', 'Redis', 'RabbitMQ', 'Firebase', 'AWS S3'],
     img: '/projects/ai-care.webp',
     link: 'https://ai-care.id',
     createdAt: '2022-07-01',
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     name: 'NU Tech Capture The Flag (CTF)',
     description:
       'A Capture The Flag competition platform for NU Tech built with Python Flask and vanilla JavaScript/HTML. Developed the frontend for challenge presentation, dynamic scoring, flag submission, and real-time leaderboard updates. Focused on responsive UI, secure session handling, and performant load times to support concurrent participants during the live competitive event, ensuring a smooth and engaging experience for all competitors.',
-    stack: ['Python', 'Flask', 'JavaScript', 'HTML'],
+    stack: ['Python', 'Flask', 'JavaScript'],
     img: '/projects/nu-tech-ctf.webp',
     link: '',
     createdAt: '2022-12-01',
@@ -177,7 +177,8 @@ export const experience: Experience[] = [
     location: 'Yogyakarta',
     role: 'Backend Engineer',
     period: 'Jan 2024 - Sekarang',
-    description: 'Served as the PIC (Person In Charge) for backend engineering initiatives, spearheading the transition from a monolithic legacy codebase to a scalable, clean microservices architecture using Python (Flask), Node.js, PHP (Laravel). Architected and maintained high-performance RESTful APIs serving thousands of daily users, while aggressively optimizing PostgreSQL/MySQL queries and implementing Redis caching to reduce average response times by 35%. Established Docker-containerized deployment workflows to ensure high availability and environment consistency across production servers.',
+    description:
+      'Served as the PIC (Person In Charge) for backend engineering initiatives, spearheading the transition from a monolithic legacy codebase to a scalable, clean microservices architecture using Python (Flask), Node.js, PHP (Laravel). Architected and maintained high-performance RESTful APIs serving thousands of daily users, while aggressively optimizing PostgreSQL/MySQL queries and implementing Redis caching to reduce average response times by 35%. Established Docker-containerized deployment workflows to ensure high availability and environment consistency across production servers.',
     points: [
       'Developed and maintained RESTful APIs serving thousands of daily users with high availability and stable performance',
       'Integrated 10+ third-party APIs, reducing manual processing time by up to 40%',
@@ -196,7 +197,8 @@ export const experience: Experience[] = [
     location: 'Yogyakarta',
     role: 'Junior Web Developer',
     period: 'Jun 2021 - Dec 2023',
-    description: 'Developed and maintained over 5 highly responsive web applications from the ground up, translating complex UI/UX designs from Figma into functional, cross-device compatible interfaces using modern JavaScript, jQuery, AJAX, and JSON. Actively collaborated with a cross-functional team of engineers and designers using agile Git-based workflows to accelerate feature delivery. Focused heavily on front-end performance, successfully improving website loading speeds by up to 30% through advanced asset minification, and the strategic implementation of efficient browser caching techniques.',
+    description:
+      'Developed and maintained over 5 highly responsive web applications from the ground up, translating complex UI/UX designs from Figma into functional, cross-device compatible interfaces using modern JavaScript, jQuery, AJAX, and JSON. Actively collaborated with a cross-functional team of engineers and designers using agile Git-based workflows to accelerate feature delivery. Focused heavily on front-end performance, successfully improving website loading speeds by up to 30% through advanced asset minification, and the strategic implementation of efficient browser caching techniques.',
     points: [
       'Developed 5+ responsive web applications that improved mobile user engagement by 20% and ensured cross-device accessibility',
       'Improved website loading speed by up to 30% through advanced asset optimization, minification, and implementing efficient browser caching strategies',
@@ -211,7 +213,8 @@ export const experience: Experience[] = [
     location: 'Jakarta',
     role: 'Warehouse Lead',
     period: 'Sep 2020 - May 2021',
-    description: 'Directed daily logistics and warehouse operations, actively managing and mentoring a team of over 10 staff members to improve overall productivity by 15%. Implemented rigorous systematic audit processes and standardized documentation workflows that successfully increased inventory accuracy by 20%. Conducted regular safety training sessions and enforced compliance with workplace safety standards, effectively cultivating a safer working environment and drastically reducing the occurrence of workplace incidents.',
+    description:
+      'Directed daily logistics and warehouse operations, actively managing and mentoring a team of over 10 staff members to improve overall productivity by 15%. Implemented rigorous systematic audit processes and standardized documentation workflows that successfully increased inventory accuracy by 20%. Conducted regular safety training sessions and enforced compliance with workplace safety standards, effectively cultivating a safer working environment and drastically reducing the occurrence of workplace incidents.',
     points: [
       'Led daily operations for a team of 10+ staff members, strengthening communication and improving overall team productivity by 15%',
       'Improved inventory accuracy by 20% through systematic audits and documentation',
@@ -224,7 +227,8 @@ export const experience: Experience[] = [
     location: 'Jakarta',
     role: 'Office Boy',
     period: 'Oct 2019 - Aug 2020',
-    description: 'Ensured the seamless daily operation of office facilities by maintaining an exceptionally clean, organized, and welcoming work environment for more than 30 full-time employees. Provided critical on-the-ground support for various company-wide events, meetings, and team-building activities. Demonstrated a strong work ethic and proactive attitude, contributing directly to higher employee engagement and ensuring that all logistical needs within the office space were met promptly and efficiently.',
+    description:
+      'Ensured the seamless daily operation of office facilities by maintaining an exceptionally clean, organized, and welcoming work environment for more than 30 full-time employees. Provided critical on-the-ground support for various company-wide events, meetings, and team-building activities. Demonstrated a strong work ethic and proactive attitude, contributing directly to higher employee engagement and ensuring that all logistical needs within the office space were met promptly and efficiently.',
     points: [
       'Maintained the cleanliness and tidiness of office facilities, supporting daily operations of 30+ employees',
       'Supported company events and activities, contributing to employee engagement'

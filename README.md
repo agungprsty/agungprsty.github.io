@@ -74,20 +74,11 @@ the deployment output, so it can be safely overwritten on every deploy.
 
 ```
 src/
-├── components/       # Header, Navbar, Footer, ProjectContainer, etc.
-│   ├── About/
-│   ├── Contact/
-│   ├── Footer/
-│   ├── Header/
-│   ├── Navbar/
-│   ├── Preloader/
-│   ├── ProjectContainer/
-│   ├── Projects/
-│   ├── ScrollToTop/
-│   └── Skills/
+├── components/       # Header, Navbar, Footer, ProjectContainer, Projects, etc.
 ├── contexts/         # Theme (dark mode) context
 ├── pages/            # Home, Experience, ProjectDetail, NotFound
 ├── types/            # Portfolio type definitions
+├── utils/            # Shared helpers (e.g. project meta)
 ├── App.tsx           # Routes & layout
 ├── index.css         # Tailwind entry + global styles
 ├── main.tsx          # App entry point
@@ -108,9 +99,9 @@ data.
 
 ## Adding / Updating Skills
 
-Skills are grouped by category in the `skills` array in `src/portfolio.ts`.
-Each skill uses a `level` of `beginner`, `intermediate`, or `advanced`, shown
-as a colored level pill in the Skills section on the homepage.
+Skills are defined as a flat `string[]` in `src/portfolio.ts`. They are
+rendered as badges in the Skills section on the homepage and on the
+`/experience` page.
 
 ## Updating the CV
 

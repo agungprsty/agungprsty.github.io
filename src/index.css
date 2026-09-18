@@ -31,44 +31,23 @@
   --color-fg-alt-dark: #f5f5f5;
   --color-primary-dark: #38bdf8;
 
-  --shadow-theme: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --shadow-theme-dark: rgba(0, 0, 0, 0.3) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-
   --font-sans: 'Inter', sans-serif;
-
-  --animate-skrotateplane: skrotateplane 1.2s infinite ease-in-out;
-}
-
-@keyframes skrotateplane {
-  0% {
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-  }
-
-  50% {
-    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-  }
-
-  100% {
-    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-  }
 }
 
 :root {
-  --clr-bg: #fafafa;
-  --clr-bg-alt: #ffffff;
-  --clr-fg: #525252;
-  --clr-fg-alt: #171717;
-  --clr-primary: #0284c7;
-  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --clr-bg: var(--color-bg);
+  --clr-bg-alt: var(--color-bg-alt);
+  --clr-fg: var(--color-fg);
+  --clr-fg-alt: var(--color-fg-alt);
+  --clr-primary: var(--color-primary);
 }
 
 .dark {
-  --clr-bg: #0a0a0a;
-  --clr-bg-alt: #171717;
-  --clr-fg: #a3a3a3;
-  --clr-fg-alt: #f5f5f5;
-  --clr-primary: #38bdf8;
-  --shadow: rgba(0, 0, 0, 0.3) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --clr-bg: var(--color-bg-dark);
+  --clr-bg-alt: var(--color-bg-alt-dark);
+  --clr-fg: var(--color-fg-dark);
+  --clr-fg-alt: var(--color-fg-alt-dark);
+  --clr-primary: var(--color-primary-dark);
 }
 
 html {

@@ -1,9 +1,22 @@
-import { createContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useState, type ReactNode } from 'react';
+
+type ThemeName = 'light' | 'dark';
 
 interface ThemeContextValue {
-  themeName: string;
+  themeName: ThemeName;
   toggleTheme: () => void;
 }
+
+const THEME_STORAGE_KEY = 'themeName';
+
+const getInitialTheme = (): ThemeName => {
+  try {
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+    return stored === 'dark' ? 'dark' : 'light';
+  } catch {
+    return 'light';
+  }
+};
 
 const ThemeContext = createContext<ThemeContextValue>({
   themeName: 'light',
@@ -11,23 +24,19 @@ const ThemeContext = createContext<ThemeContextValue>({
 });
 
 function ThemeProvider({ children }: { children: ReactNode }) {
-  const [themeName, setThemeName] = useState('light');
+  const [themeName, setThemeName] = useState<ThemeName>(getInitialTheme);
 
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('themeName');
-
-    if (storedTheme) {
-      setThemeName(storedTheme);
-    } else {
-      setThemeName('light');
-    }
+  const toggleTheme = useCallback(() => {
+    setThemeName((prev) => {
+      const next: ThemeName = prev === 'dark' ? 'light' : 'dark';
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, next);
+      } catch {
+        // Ignore storage failures (e.g. private mode); theme still toggles in-memory.
+      }
+      return next;
+    });
   }, []);
-
-  const toggleTheme = () => {
-    const name = themeName === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('themeName', name);
-    setThemeName(name);
-  };
 
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>{children}</ThemeContext.Provider>

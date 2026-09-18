@@ -20,34 +20,55 @@ const Contact = () => {
 
   return (
     <section className="section mt-20 flex flex-col items-start" id="contact">
-      <h4 className="section__title normal-case tracking-normal !mb-4">Interested in working together?
+      <h4 className="section__title normal-case tracking-normal !mb-4">
+        Interested in working together?
         <br />
         <a href={`mailto:${contact.email}`} className="text-xl font-semibold link mb-10">
           {contact.email}
         </a>
       </h4>
 
-      <p className="text-lg font-medium text-fg dark:text-fg-dark">Let's connect:</p>
+      <p className="text-lg font-medium text-fg dark:text-fg-dark">Let&apos;s connect:</p>
       <div className="flex flex-wrap items-center gap-4">
         {social && (
           <div className="flex items-center">
             {social.github && (
-              <a href={social.github} aria-label="github" className="link--icon mr-3">
+              <a
+                href={social.github}
+                aria-label="GitHub"
+                target="_blank"
+                rel="noreferrer"
+                className="link--icon mr-3">
                 <GitHub />
               </a>
             )}
             {social.x && (
-              <a href={social.x} aria-label="x" className="link--icon mr-3">
+              <a
+                href={social.x}
+                aria-label="X (Twitter)"
+                target="_blank"
+                rel="noreferrer"
+                className="link--icon mr-3">
                 <XIcon />
               </a>
             )}
             {social.linkedin && (
-              <a href={social.linkedin} aria-label="linkedin" className="link--icon mr-3">
+              <a
+                href={social.linkedin}
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noreferrer"
+                className="link--icon mr-3">
                 <LinkedIn />
               </a>
             )}
             {social.medium && (
-              <a href={social.medium} aria-label="medium" className="link--icon mr-3">
+              <a
+                href={social.medium}
+                aria-label="Medium"
+                target="_blank"
+                rel="noreferrer"
+                className="link--icon mr-3">
                 <Medium />
               </a>
             )}

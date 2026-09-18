@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom';
 import type { Project } from '@/types/portfolio';
+import { getProjectMeta } from '@/utils/project';
 
 function ProjectContainer({ project }: { project: Project }) {
-  const metaParts = [];
-  if (project.period) metaParts.push(project.period);
-  if (project.type) metaParts.push(project.type);
-  const metaText = metaParts.join(' · ');
+  const metaText = getProjectMeta(project);
 
   return (
     <Link
       to={`/projects/${project.id}`}
-      className={`relative flex h-full flex-col rounded-xl border p-5 transition-all duration-200 hover:-translate-y-[2px] ${project.pin ? 'border-primary/30 bg-primary/[0.04] dark:border-primary/30 dark:bg-primary/[0.06]' : 'border-black/5 bg-black/[0.02] hover:border-primary/30 dark:border-white/[0.08] dark:bg-white/[0.03]'}`}>
+      className={`relative flex h-full flex-col rounded-xl border p-5 transition-all duration-200 hover:-translate-y-[2px] ${
+        project.pin
+          ? 'border-primary/30 bg-primary/[0.04] dark:border-primary/30 dark:bg-primary/[0.06]'
+          : 'border-black/5 bg-black/[0.02] hover:border-primary/30 dark:border-white/[0.08] dark:bg-white/[0.03]'
+      }`}>
       {project.pin && (
         <span
           className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white shadow-md ring-4 ring-white dark:ring-[#0a0a0a]"
@@ -34,13 +36,9 @@ function ProjectContainer({ project }: { project: Project }) {
       <h3 className="mb-1.5 pr-6 text-[0.95rem] font-semibold leading-tight text-fg-alt dark:text-white">
         {project.name}
       </h3>
-      
-      {metaText && (
-        <div className="mb-2.5 text-[0.75rem] text-fg dark:text-[#666]">
-          {metaText}
-        </div>
-      )}
-      
+
+      {metaText && <div className="mb-2.5 text-[0.75rem] text-fg dark:text-[#666]">{metaText}</div>}
+
       <div className="mb-4 flex-grow text-[0.85rem] leading-relaxed text-fg line-clamp-4 dark:text-[#999]">
         {project.description}
       </div>

@@ -17,7 +17,9 @@ const Projects = ({ limit }: Props) => {
   }, []);
 
   const typeOptions = useMemo(() => {
-    const unique = Array.from(new Set(projects.map((p) => p.type).filter(Boolean) as string[])).sort();
+    const unique = Array.from(
+      new Set(projects.map((p) => p.type).filter(Boolean) as string[])
+    ).sort();
     return ['All', ...unique];
   }, []);
 
@@ -36,7 +38,9 @@ const Projects = ({ limit }: Props) => {
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-[1.4rem] font-semibold text-fg-alt dark:text-white">Recent Projects</h2>
         {limit && projects.length > limit && (
-          <Link to="/projects" className="text-[0.85rem] text-primary transition-colors hover:text-sky-300">
+          <Link
+            to="/projects"
+            className="text-[0.85rem] text-primary transition-colors hover:text-sky-300">
             View all &rarr;
           </Link>
         )}
@@ -45,10 +49,13 @@ const Projects = ({ limit }: Props) => {
       {!limit && (
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center">
           <div className="flex flex-col gap-1.5">
-            <label className="text-[0.75rem] font-medium uppercase tracking-wide text-fg-alt dark:text-[#888]">
+            <label
+              htmlFor="filter-tech"
+              className="text-[0.75rem] font-medium uppercase tracking-wide text-fg-alt dark:text-[#888]">
               Technology
             </label>
             <select
+              id="filter-tech"
               className="rounded-md border border-black/10 bg-transparent px-3 py-1.5 text-[0.85rem] text-fg outline-none focus:border-primary dark:border-white/10 dark:text-white"
               value={selectedTech}
               onChange={(e) => setSelectedTech(e.target.value)}>
@@ -61,10 +68,13 @@ const Projects = ({ limit }: Props) => {
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-[0.75rem] font-medium uppercase tracking-wide text-fg-alt dark:text-[#888]">
+            <label
+              htmlFor="filter-type"
+              className="text-[0.75rem] font-medium uppercase tracking-wide text-fg-alt dark:text-[#888]">
               Project Type
             </label>
             <select
+              id="filter-type"
               className="rounded-md border border-black/10 bg-transparent px-3 py-1.5 text-[0.85rem] text-fg outline-none focus:border-primary dark:border-white/10 dark:text-white"
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}>

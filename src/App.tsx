@@ -5,12 +5,11 @@ import Header from '@/components/Header/Header';
 import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';
 import ScrollToTopOnNavigate from '@/components/ScrollToTop/ScrollToTopOnNavigate';
 import Footer from '@/components/Footer/Footer';
-import Preloader from '@/components/Preloader/Preloader';
+import Projects from '@/components/Projects/Projects';
 import Home from '@/pages/Home';
 
 const Experience = lazy(() => import('@/pages/Experience'));
 const ProjectDetail = lazy(() => import('@/pages/ProjectDetail'));
-const Projects = lazy(() => import('@/components/Projects/Projects'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 const App = () => {
@@ -19,12 +18,9 @@ const App = () => {
   return (
     <div
       id="top"
-      className={`${themeName === 'dark' ? 'dark' : ''} font-sans transition-colors duration-300`}
-      style={{
-        lineHeight: 1.5,
-        color: 'var(--clr-fg)',
-        backgroundColor: 'var(--clr-bg)'
-      }}>
+      className={`${
+        themeName === 'dark' ? 'dark' : ''
+      } bg-bg font-sans text-fg transition-colors duration-300 dark:bg-bg-dark dark:text-fg-dark`}>
       <Header />
 
       <main className="mx-auto w-[95%] max-w-5xl max-[600px]:w-full max-[600px]:px-6">
@@ -42,7 +38,6 @@ const App = () => {
       <ScrollToTopOnNavigate />
       <ScrollToTop />
       <Footer />
-      <Preloader />
     </div>
   );
 };

@@ -1,13 +1,7 @@
 import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
-import {
-  Brightness2,
-  WbSunnyRounded,
-  Folder,
-  Work
-} from '@mui/icons-material';
+import { Brightness2, WbSunnyRounded } from '@mui/icons-material';
 import { ThemeContext } from '@/contexts/theme';
-import { projects, experience } from '@/portfolio';
 
 const Navbar = () => {
   const { themeName, toggleTheme } = useContext(ThemeContext);
@@ -27,38 +21,32 @@ const Navbar = () => {
   };
 
   const navItems = [
-    ...(projects.length ? [{ label: 'Projects', href: '/projects', icon: Folder }] : []),
-    ...(experience.length
-      ? [{ label: 'Experience', href: '/experience', icon: Work, shortLabel: 'Exp' }]
-      : [])
+    { label: 'Projects', href: '/projects' },
+    { label: 'Experience', href: '/experience' }
   ];
 
-
   return (
-    <>
-      {/* Desktop nav */}
-      <nav className="flex items-center">
-        <ul className="mr-6 flex max-[600px]:mr-3">
-          {navItems.map((item) => (
-            <li key={item.label} className="ml-6">
-              <a
-                href={item.href}
-                className={`link--nav ${isActive(item.href) ? 'link--nav--active' : ''}`}>
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+    <nav className="flex items-center">
+      <ul className="mr-6 flex max-[600px]:mr-3">
+        {navItems.map((item) => (
+          <li key={item.label} className="ml-6">
+            <a
+              href={item.href}
+              className={`link--nav ${isActive(item.href) ? 'link--nav--active' : ''}`}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
 
-        <button
-          type="button"
-          onClick={toggleTheme}
-          className="btn--icon mt-1.5"
-          aria-label="toggle theme">
-          {themeName === 'dark' ? <WbSunnyRounded /> : <Brightness2 />}
-        </button>
-      </nav>
-    </>
+      <button
+        type="button"
+        onClick={toggleTheme}
+        className="btn--icon mt-1.5"
+        aria-label="toggle theme">
+        {themeName === 'dark' ? <WbSunnyRounded /> : <Brightness2 />}
+      </button>
+    </nav>
   );
 };
 

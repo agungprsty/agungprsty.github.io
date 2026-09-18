@@ -5,20 +5,23 @@ const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () =>
-      window.pageYOffset > 500 ? setIsVisible(true) : setIsVisible(false);
+    const toggleVisibility = () => setIsVisible(window.scrollY > 500);
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  return isVisible ? (
-    <div className="fixed bottom-8 right-16 max-[900px]:hidden">
-      <a href="#top">
-        <ArrowUpward fontSize="large" />
-      </a>
-    </div>
-  ) : null;
+  if (!isVisible) return null;
+
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label="Back to top"
+      className="fixed bottom-8 right-16 max-[900px]:hidden btn--icon">
+      <ArrowUpward fontSize="large" />
+    </button>
+  );
 };
 
 export default ScrollToTop;

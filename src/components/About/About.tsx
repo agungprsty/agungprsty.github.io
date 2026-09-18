@@ -1,5 +1,7 @@
 import { about } from '@/portfolio';
 
+const AVATAR_URL = 'https://avatars.githubusercontent.com/agungprsty?s=160';
+
 const About = () => {
   const { name, role, description } = about;
 
@@ -8,16 +10,18 @@ const About = () => {
       <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
         <div className="shrink-0">
           <img
-            src="https://avatars.githubusercontent.com/agungprsty"
-            alt="avatar"
+            src={AVATAR_URL}
+            alt={`${name} avatar`}
             id="main-avatar"
+            loading="lazy"
+            referrerPolicy="no-referrer"
             className="h-32 w-32 rounded-full border-4 border-fg/10 object-cover shadow-lg dark:border-fg-dark/10"
           />
         </div>
         <div className="flex flex-col">
           {name && (
             <h1>
-              <span className="link font-semibold">{name}</span>
+              <span className="font-semibold text-primary">{name}</span>
             </h1>
           )}
           {role && <h2 className="mt-2 sm:mt-4">A {role}</h2>}

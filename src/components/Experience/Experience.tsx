@@ -15,7 +15,9 @@ const Experience = ({ limit }: Props) => {
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-[1.4rem] font-semibold text-fg-alt dark:text-white">Experience</h2>
         {limit && experience.length > limit && (
-          <Link to="/experience" className="text-[0.85rem] text-primary transition-colors hover:text-sky-300">
+          <Link
+            to="/experience"
+            className="text-[0.85rem] text-primary transition-colors hover:text-sky-300">
             View all &rarr;
           </Link>
         )}
@@ -29,12 +31,8 @@ const Experience = ({ limit }: Props) => {
             <h3 className="mb-1 text-[1rem] font-semibold text-fg-alt dark:text-white">
               {exp.role}
             </h3>
-            <div className="mb-1.5 text-[0.8rem] font-medium text-primary">
-              {exp.company}
-            </div>
-            <div className="mb-3 text-[0.75rem] text-fg dark:text-[#666]">
-              {exp.period}
-            </div>
+            <div className="mb-1.5 text-[0.8rem] font-medium text-primary">{exp.company}</div>
+            <div className="mb-3 text-[0.75rem] text-fg dark:text-[#666]">{exp.period}</div>
             {exp.description ? (
               <div className="text-[0.85rem] leading-relaxed text-fg dark:text-[#999]">
                 {exp.description}
