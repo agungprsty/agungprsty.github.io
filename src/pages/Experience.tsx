@@ -9,10 +9,10 @@ const Experience = () => {
       <Skills />
 
       <section id="experience-timeline" className="section mt-12">
-        <section id="experience-header" className="section mb-6 pb-2 border-b border-black/5">
-          <h1 className="mb-2 text-2xl font-bold text-fg-alt dark:text-white sm:text-3xl md:text-4xl lg:text-[2.5rem]">
+        <section id="experience-header" className="section mb-4 pb-2 border-b border-black/5">
+          <h2 className="mb-2 text-[1.4rem] font-semibold text-fg-alt dark:text-white">
             Experience
-          </h1>
+          </h2>
           <p className="text-base text-fg dark:text-[#888] sm:text-lg">
             5+ years of experience in software engineering
           </p>
