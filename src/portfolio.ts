@@ -178,17 +178,16 @@ export const experience: Experience[] = [
     role: 'Backend Engineer',
     period: 'Jan 2024 - Sekarang',
     description:
-      'Served as the PIC (Person In Charge) for backend engineering initiatives, spearheading the transition from a monolithic legacy codebase to a scalable, clean microservices architecture using Python (Flask), Node.js, PHP (Laravel). Architected and maintained high-performance RESTful APIs serving thousands of daily users, while aggressively optimizing PostgreSQL/MySQL queries and implementing Redis caching to reduce average response times by 35%. Established Docker-containerized deployment workflows to ensure high availability and environment consistency across production servers.',
+      'As the backend PIC for PT Digital Sekuriti Indonesia, architected the flagship AI Care healthcare ecosystem — a microservices platform (Python Flask, MongoDB, Redis, Celery + RabbitMQ) serving thousands of daily users across patient and clinician applications — and built the internal MLOps dashboard powering the Torcons AI chat platform. Drove the migration from a monolithic legacy codebase to clean, scalable microservices, optimized PostgreSQL/MySQL queries with Redis caching, and standardized Dockerized deployment workflows for consistent, high-availability production delivery.',
     points: [
-      'Developed and maintained RESTful APIs serving thousands of daily users with high availability and stable performance',
-      'Integrated 10+ third-party APIs, reducing manual processing time by up to 40%',
-      'Designed and optimized backend services, improving data exchange efficiency by 30%',
+      'Architected AI Care (ai-care.id) as a microservices ecosystem with Flask, MongoDB, Redis, and Celery/RabbitMQ background processing, supporting thousands of daily users across patient and doctor apps',
+      'Built an internal MLOps dashboard in FastAPI for Torcons AI, orchestrating pre-training, fine-tuning, and post-training pipelines with model quantization',
+      'Integrated 10+ third-party services (Midtrans, Qontak WhatsApp gateway, Firebase/FCM, AWS S3) reducing manual processing time by up to 40%',
+      'Automated medical document generation with PDFKit for print-ready consultation resumes, prescriptions, and reference letters',
       'Optimized complex PostgreSQL/MySQL queries and implemented Redis caching, reducing average API response time by 35%',
-      'Architected and deployed scalable microservices using Python (FastAPI) and Node.js, containerized via Docker to ensure environment consistency',
-      'Streamlined frontend–backend integration, decreasing API error rates by 25%',
+      'Spearheaded the refactoring of a monolithic legacy codebase into clean, modular microservices, improving maintainability and reducing technical debt',
       'Implemented automated unit testing, achieving 80%+ code coverage',
-      'Identified and resolved critical performance bottlenecks and security vulnerabilities in production environments, reducing system downtime and ensuring data integrity',
-      'Spearheaded the refactoring of a monolithic legacy codebase into clean, modular structures, improving maintainability and reducing technical debt for future feature deployments'
+      'Established Dockerized deployment workflows to ensure environment consistency and high availability across production servers'
     ]
   },
   {
@@ -198,13 +197,14 @@ export const experience: Experience[] = [
     role: 'Junior Web Developer',
     period: 'Jun 2021 - Dec 2023',
     description:
-      'Developed and maintained over 5 highly responsive web applications from the ground up, translating complex UI/UX designs from Figma into functional, cross-device compatible interfaces using modern JavaScript, jQuery, AJAX, and JSON. Actively collaborated with a cross-functional team of engineers and designers using agile Git-based workflows to accelerate feature delivery. Focused heavily on front-end performance, successfully improving website loading speeds by up to 30% through advanced asset minification, and the strategic implementation of efficient browser caching techniques.',
+      'Built and maintained production web applications including the Klinia clinic management system (CodeIgniter 3), the LMS Get-Kalm learning platform (Laravel + OAuth2 SSO), the Rumah Berkat master dashboard, and the NU Tech Capture The Flag platform. Translated Figma designs into responsive, cross-device interfaces with JavaScript, jQuery, AJAX, and JSON, collaborating with engineers and designers in agile Git-based workflows.',
     points: [
-      'Developed 5+ responsive web applications that improved mobile user engagement by 20% and ensured cross-device accessibility',
-      'Improved website loading speed by up to 30% through advanced asset optimization, minification, and implementing efficient browser caching strategies',
-      'Enhanced user interaction and front-end responsiveness by developing dynamic interactive components utilizing JavaScript and jQuery',
-      'Converted UI/UX designs from Figma into functional web applications using AJAX and JSON',
-      'Collaborated with a cross-functional team of 6+ engineers and designers using Git-based workflows, reducing code conflict resolutions by 15%'
+      'Developed Klinia (klinia.id), digitizing end-to-end clinic workflows — patient records, appointments, queue management, inventory, and billing',
+      'Built LMS Get-Kalm course creation, enrollment, and progress tracking with OAuth2-based Single Sign-On for secure cross-service access',
+      'Developed the Rumah Berkat master dashboard to consolidate multi-service operations, analytics, and role-based administration',
+      'Delivered the NU Tech CTF frontend with dynamic scoring, flag submission, and real-time leaderboard for live competitive events',
+      'Improved website loading speed by up to 30% through asset minification and efficient browser caching strategies',
+      'Converted Figma UI/UX designs into functional web applications using JavaScript, AJAX, and JSON'
     ]
   },
   {

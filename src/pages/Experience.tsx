@@ -6,19 +6,17 @@ const Experience = () => {
 
   return (
     <>
-      <section id="experience-header" className="section pb-0">
-        <h1 className="text-[2.5rem] font-bold text-fg-alt dark:text-white mb-2">Experience</h1>
-        <p className="text-[1.1rem] text-fg dark:text-[#888]">
-          5+ years of experience in software engineering
-        </p>
-      </section>
-
       <Skills />
 
       <section id="experience-timeline" className="section mt-12">
-        <h3 className="text-[1.2rem] font-semibold text-fg-alt dark:text-white mb-6 pb-2 border-b border-black/5 dark:border-white/[0.08]">
-          Experience
-        </h3>
+        <section id="experience-header" className="section mb-6 pb-2 border-b border-black/5">
+          <h1 className="mb-2 text-2xl font-bold text-fg-alt dark:text-white sm:text-3xl md:text-4xl lg:text-[2.5rem]">
+            Experience
+          </h1>
+          <p className="text-base text-fg dark:text-[#888] sm:text-lg">
+            5+ years of experience in software engineering
+          </p>
+        </section>
 
         <div className="flex flex-col">
           {experience.map((item) => (
